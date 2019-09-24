@@ -1,0 +1,2208 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css1/iconfont.css">
+    <link rel="stylesheet" href="css1/all.css">
+    <link rel="shortcut icon" href="img/icon.jpg" />
+    <title>网游游戏娱乐商城</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        #header #loginarea .logined>li {
+            float: left;
+            position: relative;
+        }
+        
+        #header #loginarea .remind_warp {
+            width: 60px;
+            height: 48px;
+        }
+        
+        .remind_warp,
+        .search-area {
+            margin: 12px 0;
+        }
+        
+        #header #loginarea .logined>li>a {
+            display: block;
+            width: 65px;
+            height: 72px;
+            line-height: 72px;
+            color: #787d82;
+            text-align: center;
+        }
+        
+        #header #loginarea .remind_warp .icon-notifi {
+            display: block;
+            line-height: 48px;
+            font-size: 22px;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        #header #loginarea .logined>li {
+            float: left;
+            position: relative;
+        }
+        
+        .user-card-box .user-card-item img {
+            width: 32px;
+            height: 32px;
+            border-color: #4d5559;
+            margin-top: 18px;
+        }
+        
+        .set_btn img {
+            border-radius: 50%;
+            vertical-align: middle;
+            display: inline-block;
+            background: url(register_img/menu_icon.png) no-repeat 0 0;
+        }
+        
+        .set_btn img {
+            border: 0;
+        }
+        
+        .user-card-box .g-user-card {
+            visibility: hidden;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            z-index: 1000;
+            width: 306px;
+            padding: 24px;
+            background-color: #fff;
+            box-shadow: 0 8px 16px 0 rgba(7, 17, 27, 0.2);
+            border-bottom-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+            box-sizing: border-box;
+        }
+        
+        div {
+            background-size: cover;
+        }
+        
+        .user-card-box .g-user-card .card-top {
+            color: #93999f;
+            position: relative;
+        }
+        
+        .user-card-box .g-user-card .card-top a {
+            display: inline-block;
+            color: #93999f;
+        }
+        
+        .user-card-box .g-user-card .card-top a img {
+            float: left;
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            margin-right: 12px;
+        }
+        
+        .user-card-box .g-user-card .card-top .card-top-right-box {
+            margin-top: 14px;
+        }
+        
+        .user-card-box .g-user-card .card-top a {
+            display: inline-block;
+            color: #93999f;
+        }
+        
+        .user-card-box .g-user-card .card-top .name {
+            display: inline-block;
+            font-size: 16px;
+            color: #07111b;
+            width: 170px;
+            line-height: 20px;
+        }
+        
+        .text-ellipsis {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .user-card-box .g-user-card .card-top .meta {
+            margin-top: 4px;
+            font-size: 12px;
+            line-height: 12px;
+        }
+        
+        .user-card-box .g-user-card .card-top .meta a {
+            margin-right: 12px;
+        }
+        
+        .user-card-box .g-user-card .card-top a {
+            display: inline-block;
+            color: #93999f;
+        }
+        
+        .user-card-box .g-user-card .card-top .meta b {
+            margin-left: 2px;
+        }
+        
+        .user-card-box .g-user-card .user-center-box {
+            padding-top: 87px;
+            position: relative;
+        }
+        
+        .user-card-box .g-user-card .user-center-box ul li {
+            position: relative;
+            width: 128px;
+            background: #F8FAFC;
+            border-radius: 2px;
+            color: #4d555d;
+            margin: 0 2px 2px 0;
+        }
+        
+        .user-card-box .g-user-card .user-center-box ul li a {
+            width: 100%;
+            height: 36px;
+            line-height: 36px;
+            padding-left: 12px;
+            text-align: left;
+            box-sizing: border-box;
+            color: black;
+            font-size: 12px;
+        }
+        
+        .user-card-box .g-user-card .user-center-box ul li .user-center-icon {
+            position: relative;
+            top: 3px;
+            font-size: 16px;
+            margin-right: 8px;
+        }
+        
+        .user-card-box .g-user-card .user-center-box ul li:nth-child(2n) {
+            margin-right: 0;
+        }
+        
+        .user-card-box .g-user-card .card-sets {
+            position: relative;
+            bottom: -11px;
+            font-size: 12px;
+            line-height: 12px;
+        }
+        
+        .user-card-box .g-user-card .card-sets a {
+            color: #93999F;
+        }
+        
+        .user-card-box:hover .g-user-card {
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <div class="page clearfix" id="nav" style="background-color: #fff;">
+            <div id="logo" class="logo">
+                <a href="" target="_self" title="首页">
+                    <img title="网络游戏" src="img/youxi1.png">
+                </a>
+            </div>
+            <ul class="navitem">
+                <li> <a href="" target="_self">资讯</a></li>
+                <li> <a href="Txinxin.html" target="_self">商城</a></li>
+                <li><a href="" target="_self">网游</a></li>
+                <li><a href="" target="_self">游戏库</a></li>
+                <li><a href="" target="_self">攻略</a></li>
+                <li><a href="" target="_self">论坛</a></li>
+            </ul>
+            <div class="searchwarp clearfix" style="min-width: 32px; height: 72px;">
+                <div class="searchTags">
+                    <a href="https://class.imooc.com/sc/64" target="_blank">英雄联盟</a>
+                    <a href="https://class.imooc.com/sc/53" target="_blank">魔兽世界</a>
+                </div>
+                <div class="searcharea">
+                    <input class="searchinput" type="text">
+                </div>
+                <div class="showhidesearch"><i class="iconfont">&#xe8ef;</i></div>
+            </div>
+            <div id="loginarea" class="beforelogin">
+                <ul class="unlogin clearfix">
+                    <li class="appdownload" id="jsappload">
+                        <a href="" class="bianse" target="_blank" style="width:60px;">下载APP</a>
+                        <div class="loadbox clearfix">
+                            <div class="mobileloadbox">
+                                <h4>好玩的网络游戏大全_游侠网</h4>
+                                <img src="img/appload.png" class="l">
+                                <div class="r">
+                                    <a class="apploadbtn" href="https://itunes.apple.com/cn/app/mu-ke-wang/id722179140?mt=8" target="_blank"><i class="icon-apple iconfont">&#xe882;</i>App Store下载</a>
+                                    <a class="apploadbtn" href="" target="_blank"><i class="icon-apple iconfont">&#xe881;</i>Android下载</a>
+                                    <p>扫描下载游侠网APP</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="shopcart" id="shopcart">
+                        <a href="shoucang.html" class="shopcarticon" target="_blank">
+                            <span>收藏夹</span>
+                        </a>
+                        <div class="mycart" id="jsmycart">
+                            <div class="carttitlebox clearfix">
+                                <h2 class="l">我的收藏夹</h2>
+                                <h5 class="r">已收藏<span class="jsincartnum">0</span>个游戏</h5>
+                            </div>
+                            <div class="cartwrap">
+                                <div class="clearcart">
+                                    <span class="cartIcon iconshoppingcart"></span>
+                                    <h3>收藏夹里空空如也</h3>
+                                    <div class="text">快去这里选购你中意的游戏</div>
+                                    <p><a class="golink" href="//coding.imooc.com" target="_blank">娱乐在线</a></p>
+                                    <p><a class="golink" href="//class.imooc.com/" target="_blank">玩玩看</a></p>
+                                </div>
+                            </div>
+                            <div class="morebox clearfix">
+                                <div class="l showbox">
+                                    <span class="text"><a href="shoucang.html" target="_blank">我的收藏中心</a></span>
+                                </div>
+                                <a href="shoucang.html" target="_blank" class="r mocobtn mocobtnred gocart">去收藏夹</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="headersignin">
+                        <a href="login.html" id="jssigninbtn">登录</a> /
+                        <a href="register.html" id="jssignupbtn">注册</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="loginarea" class="afterlogin">
+                <ul class="unlogin clearfix logined">
+                    <li class="appdownload" id="jsappload">
+                        <a href="" class="bianse" target="_blank" style="width:60px;">下载APP</a>
+                        <div class="loadbox clearfix">
+                            <div class="mobileloadbox">
+                                <h4>好玩的网络游戏大全_游侠网</h4>
+                                <img src="img/appload.png" class="l">
+                                <div class="r">
+                                    <a class="apploadbtn" href="https://itunes.apple.com/cn/app/mu-ke-wang/id722179140?mt=8" target="_blank"><i class="icon-apple iconfont">&#xe882;</i>App Store下载</a>
+                                    <a class="apploadbtn" href="" target="_blank"><i class="icon-apple iconfont">&#xe881;</i>Android下载</a>
+                                    <p>扫描下载游侠网APP</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="shopcart" id="shopcart">
+                        <a href="" class="shopcarticon" target="_blank">
+                            <span>收藏夹</span>
+                        </a>
+                        <div class="mycart" id="jsmycart">
+                            <div class="carttitlebox clearfix">
+                                <h2 class="l">我的收藏夹</h2>
+                                <h5 class="r">已收藏<span class="jsincartnum">0</span>个游戏</h5>
+                            </div>
+                            <div class="cartwrap">
+                                <div class="clearcart">
+                                    <span class="cartIcon iconshoppingcart"></span>
+                                    <h3>收藏夹里空空如也</h3>
+                                    <div class="text">快去这里选购你中意的游戏</div>
+                                    <p><a class="golink" href="//coding.imooc.com" target="_blank">娱乐在线</a></p>
+                                    <p><a class="golink" href="//class.imooc.com/" target="_blank">玩玩看</a></p>
+                                </div>
+                            </div>
+                            <div class="morebox clearfix">
+                                <div class="l showbox">
+                                    <span class="text"><a href="shoucang.html" target="_blank">我的收藏中心</a></span>
+                                </div>
+                                <a href="shoucang.html" target="_blank" class="r mocobtn mocobtnred gocart">去收藏夹</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="remind_warp">
+                        <i class="msg_remind" style="display: inline;"></i>
+                        <a target="_blank" href="/u/6058012/notices">
+                            <i class="icon-notifi iconfont">&#xe866;</i>
+                        </a>
+                    </li>
+                    <li class="user-mycourse-box">
+                        <a class="user-card-item js-header-courseurl" href="" target="_self">
+                            <span>我的游戏</span>
+                        </a>
+                    </li>
+                    <li class="set_btn user-card-box" id="header-user-card">
+                        <a id="header-avator" class="user-card-item js-header-avator" action-type="my_menu" href="" target="_self">
+                            <img width="40" height="40" src="register_img/menu_icon.png">
+                        </a>
+                        <div class="g-user-card">
+                            <div class="card-inner">
+                                <div class="card-top clearfix">
+                                    <a class="l" href="">
+                                        <img src="register_img/menu_icon.png" alt="慕运维3029433">
+                                    </a>
+                                    <div class="card-top-right-box l">
+                                        <a href="">
+                                            <span class="name text-ellipsis">慕运维3029433</span>
+                                        </a>
+                                        <div class="meta">
+                                            <a href="">经验<b id="js-user-mp">0</b></a>
+                                            <a href="">积分<b id="js-user-credit">0</b></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="user-center-box">
+                                    <ul class="clearfix">
+                                        <li class="l">
+                                            <a href="" target="_blank"> <span class="user-center-icon icon-tick iconfont">&#xe861;</span>我的游戏</a>
+                                        </li>
+                                        <li class="l">
+                                            <a href="//order.imooc.com/myorder" target="_blank"><span class="user-center-icon icon-receipt iconfont">&#xe850;</span>游戏中心</a>
+                                        </li>
+                                        <li class="l">
+                                            <a href="/mall/index" target="_blank"><span class="user-center-icon icon-score_shop iconfont">&#xe871;</span>积分商城</a>
+                                        </li>
+                                        <li class="l">
+                                            <a href="/user/setbindsns" target="_blank"><span class="user-center-icon icon-set iconfont">&#xe872;</span>个人设置</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-sets clearfix">
+                                    <a href="" class="l tuichu">安全退出</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="site">
+        <ul id="list" class="category">
+            <li class="item">
+                <a class="title" href="">热门游戏
+                    <i class="tride">&gt;</i>
+                </a>
+                <div class="children" id="box1">
+                    <div class="catesbox">
+                        <div class="bannerline">
+                            <span class="bold mr10 l smalltitle">热门游戏</span>
+                        </div>
+                        <div class="tagbox l">
+                            <a target="_blank" href="/course/list?c=wff">英雄联盟</a>
+                            <a target="_blank" href="/course/list?c=blockchain">地下城与勇士</a>
+                            <a target="_blank" href="/course/list?c=ethereum">魔兽世界</a>
+                            <a target="_blank" href="/course/list?c=machine">梦幻西游</a>
+                            <a target="_blank" href="/course/list?c=deep">我的世界</a>
+                            <a target="_blank" href="/course/list?c=pcvision">无尽战区</a>
+                            <a target="_blank" href="/course/list?c=nlp">勇者斗恶龙X</a>
+                            <a target="_blank" href="/course/list?c=datafxwj">绝地求生&amp;二</a>
+                        </div>
+                    </div>
+                    <div class="recommentbox">
+                        <div class="l bannercoursecard">
+                            <a href="" target="_blank" title="英雄联盟" class="clearfix">
+                                <img src="img/1.jpg" class="l">
+                                <div class="l coursecard">
+                                    <h3 class="coursecardname">英雄联盟</h3>
+                                    <div class="coursecardprice l">299mb</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l">中级</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"><i class="iconset_sns"></i>670</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="l bannercoursecard">
+                            <a href="" target="_blank" title="地下城与勇士" class="clearfix">
+                                <img src="img/2.jpg" class="l">
+                                <div class="l coursecard">
+                                    <h3 class="coursecardname">地下城与勇士</h3>
+                                    <div class="coursecardinfo l"> 入门</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"><i class="iconset_sns"></i>44923</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="l bannercoursecard">
+                            <a href="" target="_blank" title="魔兽世界" class="clearfix">
+                                <img src="img/3.jpg" class="l">
+                                <div class="l coursecard">
+                                    <h3 class="coursecardname">魔兽世界</h3>
+                                    <div class="coursecardprice l">499mb</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l">高级</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"><i class="iconset_sns"></i>357</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="l bannercoursecard">
+                            <a href="" target="_blank" title="和平精英" class="clearfix">
+                                <img src="img/4.jpg" class="l">
+                                <div class="l coursecard">
+                                    <h3 class="coursecardname">和平精英</h3>
+                                    <div class="coursecardprice l">632mb</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l">初级</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"><i class="iconset_sns"></i>30024</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="item">
+                <a class="title" href="">网络游戏
+                    <i class="tride">&gt;</i>
+                </a>
+                <div class="children" id="box2">
+                    <div class="catesbox">
+                        <div class="bannerline">
+                            <span class="bold mr10 l smalltitle">网络游戏</span>
+                        </div>
+                        <div class="tagbox l">
+                            <a target="_blank" href="/course/list?c=wff">英雄联盟</a>
+                            <a target="_blank" href="/course/list?c=blockchain">地下城与勇士</a>
+                            <a target="_blank" href="/course/list?c=ethereum">铁血龙魂</a>
+                            <a target="_blank" href="/course/list?c=machine">梦三国2</a>
+                            <a target="_blank" href="/course/list?c=deep">剑侠情缘三</a>
+                            <a target="_blank" href="/course/list?c=pcvision">流放之路</a>
+                            <a target="_blank" href="/course/list?c=nlp">火箭联盟</a>
+                            <a target="_blank" href="/course/list?c=datafxwj">超激斗梦境</a>
+                            <a target="_blank" href="/course/list?c=nlp">艾兰岛</a>
+                            <a target="_blank" href="/course/list?c=nlp">天堂永恒</a>
+                            <a target="_blank" href="/course/list?c=nlp">我的世界</a>
+                            <a target="_blank" href="/course/list?c=nlp">炉石传说</a>
+                            <a target="_blank" href="/course/list?c=nlp">冒险岛2</a>
+                            <a target="_blank" href="/course/list?c=nlp">绝地求生</a>
+                            <a target="_blank" href="/course/list?c=nlp">无尽战区</a>
+                        </div>
+                    </div>
+                    <div class="recommentbox">
+                        <div class="l bannercoursecard">
+                            <a href="" target="_blank" title="超激斗梦境" class="clearfix">
+                                <img src="img/01.jpg" class="l">
+                                <div class="l coursecard">
+                                    <h3 class="coursecardname">超激斗梦境</h3>
+                                    <div class="coursecardprice l">699mb</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"> 6步／42课</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"><i class="iconset_sns"></i>2233</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="l bannercoursecard">
+                            <a href="" target="_blank" title="天堂永恒" class="clearfix">
+                                <img src="img/02.jpg" class="l">
+                                <div class="l coursecard">
+                                    <h3 class="coursecardname">天堂永恒</h3>
+                                    <div class="coursecardinfo l"> 149mb</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"> 初级</div>
+                                    <div class="coursecardinfo l"><i class="iconset_sns"></i>18428</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="l bannercoursecard">
+                            <a href="" target="_blank" title="绝地求生" class="clearfix">
+                                <img src="img/03.jpg" class="l">
+                                <div class="l coursecard">
+                                    </h3>
+                                    <h3 class="coursecardname">绝地求生</h3>
+                                    <div class="coursecardprice l">366mb</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l">高级</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"><i class="iconset_sns"></i>2098</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="l bannercoursecard">
+                            <a href="" target="_blank" title="地下城与勇士" class="clearfix">
+                                <img src="img/04.jpg" class="l">
+                                <div class="l coursecard">
+                                    <h3 class="coursecardname">地下城与勇士</h3>
+                                    <div class="coursecardprice l">266mb</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l">中级</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"><i class="iconset_sns"></i>1024</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="item">
+                <a class="title" href="">手机游戏
+                    <i class="tride">&gt;</i>
+                </a>
+                <div class="children" id="box3">
+                    <div class="catesbox">
+                        <div class="bannerline">
+                            <span class="bold mr10 l smalltitle">手机游戏</span>
+                        </div>
+                        <div class="tagbox l">
+                            <a target="_blank" href="/course/list?c=wff">明日之后</a>
+                            <a target="_blank" href="/course/list?c=blockchain">自由幻想手游</a>
+                            <a target="_blank" href="/course/list?c=ethereum">非人学园</a>
+                            <a target="_blank" href="/course/list?c=machine">一梦江湖</a>
+                            <a target="_blank" href="/course/list?c=deep">逆水寒</a>
+                            <a target="_blank" href="/course/list?c=pcvision">决战！平安京</a>
+                            <a target="_blank" href="/course/list?c=nlp">红莲之王</a>
+                            <a target="_blank" href="/course/list?c=datafxwj">暗黑破坏神：&amp;不朽</a>
+                        </div>
+                    </div>
+                    <div class="recommentbox">
+                        <div class="l bannercoursecard">
+                            <a href="" target="_blank" title="自由幻想手游" class="clearfix">
+                                <img src="img/1.jpg" class="l">
+                                <div class="l coursecard">
+                                    <h3 class="coursecardname">自由幻想手游</h3>
+                                    <div class="coursecardprice l">332mb</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l">中级</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"><i class="iconset_sns"></i>670</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="l bannercoursecard">
+                            <a href="" target="_blank" title="非人学园" class="clearfix">
+                                <img src="img/2.jpg" class="l">
+                                <div class="l coursecard">
+                                    <h3 class="coursecardname">非人学园</h3>
+                                    <div class="coursecardinfo l"> 入门</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"><i class="iconset_sns"></i>44923</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="l bannercoursecard">
+                            <a href="" target="_blank" title="暗黑破坏神" class="clearfix">
+                                <img src="img/3.jpg" class="l">
+                                <div class="l coursecard">
+                                    <h3 class="coursecardname">暗黑破坏神</h3>
+                                    <div class="coursecardprice l">499mb</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l">高级</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"><i class="iconset_sns"></i>357</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="l bannercoursecard">
+                            <a href="" target="_blank" title="决战！平安京" class="clearfix">
+                                <img src="img/4.jpg" class="l">
+                                <div class="l coursecard">
+                                    <h3 class="coursecardname">决战！平安京</h3>
+                                    <div class="coursecardprice l">353mb</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l">初级</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"><i class="iconset_sns"></i>30024</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="item">
+                <a class="title" href="">人气新游
+                    <i class="tride">&gt;</i>
+                </a>
+                <div class="children" id="box4">
+                    <div class="catesbox">
+                        <div class="bannerline">
+                            <span class="bold mr10 l smalltitle">人气新游</span>
+                        </div>
+                        <div class="tagbox l">
+                            <a target="_blank" href="/course/list?c=wff">绝地求生</a>
+                            <a target="_blank" href="/course/list?c=blockchain">铁血龙魂</a>
+                            <a target="_blank" href="/course/list?c=ethereum">以太坊</a>
+                            <a target="_blank" href="/course/list?c=machine">NBA2K OL2</a>
+                            <a target="_blank" href="/course/list?c=deep">深度学习</a>
+                            <a target="_blank" href="/course/list?c=pcvision">勇者斗恶龙X</a>
+                            <a target="_blank" href="/course/list?c=nlp">超激斗梦境</a>
+                            <a target="_blank" href="/course/list?c=datafxwj">无畏战舰&amp;挖掘</a>
+                        </div>
+                    </div>
+                    <div class="recommentbox">
+                        <div class="l bannercoursecard">
+                            <a href="" target="_blank" title="绝地求生" class="clearfix">
+                                <img src="img/1.jpg" class="l">
+                                <div class="l coursecard">
+                                    <h3 class="coursecardname">绝地求生</h3>
+                                    <div class="coursecardprice l">299mb</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l">中级</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"><i class="iconset_sns"></i>670</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="l bannercoursecard">
+                            <a href="" target="_blank" title="铁血龙魂" class="clearfix">
+                                <img src="img/2.jpg" class="l">
+                                <div class="l coursecard">
+                                    <h3 class="coursecardname">铁血龙魂</h3>
+                                    <div class="coursecardinfo l"> 入门</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"><i class="iconset_sns"></i>44923</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="l bannercoursecard">
+                            <a href="" target="_blank" title="超激斗梦境" class="clearfix">
+                                <img src="img/3.jpg" class="l">
+                                <div class="l coursecard">
+                                    <h3 class="coursecardname">超激斗梦境</h3>
+                                    <div class="coursecardprice l">2543mb</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l">高级</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"><i class="iconset_sns"></i>357</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="l bannercoursecard">
+                            <a href="" target="_blank" title="无畏战舰" class="clearfix">
+                                <img src="img/4.jpg" class="l">
+                                <div class="l coursecard">
+                                    <h3 class="coursecardname">无畏战舰</h3>
+                                    <div class="coursecardprice l">143mb</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l">初级</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"><i class="iconset_sns"></i>30024</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="item">
+                <a class="title" href="">近期新作
+                    <i class="tride">&gt;</i>
+                </a>
+                <div class="children" id="box5">
+                    <div class="catesbox">
+                        <div class="bannerline">
+                            <span class="bold mr10 l smalltitle">近期新作</span>
+                        </div>
+                        <div class="tagbox l">
+                            <a target="_blank" href="/course/list?c=wff">潮人篮球</a>
+                            <a target="_blank" href="/course/list?c=blockchain">一梦江湖</a>
+                            <a target="_blank" href="/course/list?c=ethereum">秘境对决</a>
+                            <a target="_blank" href="/course/list?c=machine">决战！平安京</a>
+                            <a target="_blank" href="/course/list?c=deep">深度学习</a>
+                            <a target="_blank" href="/course/list?c=pcvision">红莲之王</a>
+                            <a target="_blank" href="/course/list?c=nlp">自由幻想手游</a>
+                            <a target="_blank" href="/course/list?c=datafxwj">泰亚史诗&amp;挖掘</a>
+                        </div>
+                    </div>
+                    <div class="recommentbox">
+                        <div class="l bannercoursecard">
+                            <a href="" target="_blank" title="潮人篮球" class="clearfix">
+                                <img src="img/1.jpg" class="l">
+                                <div class="l coursecard">
+                                    <h3 class="coursecardname">潮人篮球</h3>
+                                    <div class="coursecardprice l">55mb</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l">中级</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"><i class="iconset_sns"></i>670</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="l bannercoursecard">
+                            <a href="" target="_blank" title="秘境对决" class="clearfix">
+                                <img src="img/2.jpg" class="l">
+                                <div class="l coursecard">
+                                    <h3 class="coursecardname">秘境对决</h3>
+                                    <div class="coursecardinfo l"> 入门</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"><i class="iconset_sns"></i>44923</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="l bannercoursecard">
+                            <a href="" target="_blank" title="红莲之王" class="clearfix">
+                                <img src="img/3.jpg" class="l">
+                                <div class="l coursecard">
+                                    <h3 class="coursecardname">红莲之王</h3>
+                                    <div class="coursecardprice l">343mb</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l">高级</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"><i class="iconset_sns"></i>357</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="l bannercoursecard">
+                            <a href="" target="_blank" title="一梦江湖" class="clearfix">
+                                <img src="img/4.jpg" class="l">
+                                <div class="l coursecard">
+                                    <h3 class="coursecardname">一梦江湖</h3>
+                                    <div class="coursecardprice l">242mb</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l">初级</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"><i class="iconset_sns"></i>30024</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="item">
+                <a class="title" href="">电竞
+                    <i class="tride">&gt;</i>
+                </a>
+                <div class="children" id="box4">
+                    <div class="catesbox">
+                        <div class="bannerline">
+                            <span class="bold mr10 l smalltitle">人气新游</span>
+                        </div>
+                        <div class="tagbox l">
+                            <a target="_blank" href="/course/list?c=wff">无畏战舰</a>
+                            <a target="_blank" href="/course/list?c=blockchain">NBA2K OL2</a>
+                            <a target="_blank" href="/course/list?c=ethereum">以太坊</a>
+                            <a target="_blank" href="/course/list?c=machine">超激斗梦境</a>
+                            <a target="_blank" href="/course/list?c=deep">绝地求生</a>
+                            <a target="_blank" href="/course/list?c=pcvision">勇者斗恶龙X</a>
+                            <a target="_blank" href="/course/list?c=nlp">铁血龙魂</a>
+                            <a target="_blank" href="/course/list?c=datafxwj">深度学习&amp;挖掘</a>
+                        </div>
+                    </div>
+                    <div class="recommentbox">
+                        <div class="l bannercoursecard">
+                            <a href="" target="_blank" title="超激斗梦境" class="clearfix">
+                                <img src="img/1.jpg" class="l">
+                                <div class="l coursecard">
+                                    <h3 class="coursecardname">超激斗梦境</h3>
+                                    <div class="coursecardprice l">242mb</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l">中级</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"><i class="iconset_sns"></i>670</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="l bannercoursecard">
+                            <a href="" target="_blank" title="铁血龙魂" class="clearfix">
+                                <img src="img/2.jpg" class="l">
+                                <div class="l coursecard">
+                                    <h3 class="coursecardname">铁血龙魂</h3>
+                                    <div class="coursecardinfo l"> 入门</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"><i class="iconset_sns"></i>44923</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="l bannercoursecard">
+                            <a href="" target="_blank" title="无畏战舰" class="clearfix">
+                                <img src="img/3.jpg" class="l">
+                                <div class="l coursecard">
+                                    <h3 class="coursecardname">无畏战舰</h3>
+                                    <div class="coursecardprice l">522mb</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l">高级</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"><i class="iconset_sns"></i>357</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="l bannercoursecard">
+                            <a href="" target="_blank" title="NBA2K OL2" class="clearfix">
+                                <img src="img/4.jpg" class="l">
+                                <div class="l coursecard">
+                                    <h3 class="coursecardname">NBA2K OL2</h3>
+                                    <div class="coursecardprice l">242mb</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l">初级</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"><i class="iconset_sns"></i>30024</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="item">
+                <a class="title" href="">排行榜
+                    <i class="tride">&gt;</i>
+                </a>
+                <div class="children" id="box2">
+                    <div class="catesbox">
+                        <div class="bannerline">
+                            <span class="bold mr10 l smalltitle">排行榜</span>
+                        </div>
+                        <div class="tagbox l">
+                            <a target="_blank" href="/course/list?c=wff">梦三国2</a>
+                            <a target="_blank" href="/course/list?c=blockchain">艾兰岛</a>
+                            <a target="_blank" href="/course/list?c=ethereum">铁血龙魂</a>
+                            <a target="_blank" href="/course/list?c=machine">炉石传说</a>
+                            <a target="_blank" href="/course/list?c=deep">冒险岛2</a>
+                            <a target="_blank" href="/course/list?c=pcvision">流放之路</a>
+                            <a target="_blank" href="/course/list?c=nlp">无尽战区</a>
+                            <a target="_blank" href="/course/list?c=datafxwj">超激斗梦境</a>
+                            <a target="_blank" href="/course/list?c=nlp">剑侠情缘三</a>
+                            <a target="_blank" href="/course/list?c=nlp">天堂永恒</a>
+                            <a target="_blank" href="/course/list?c=nlp">我的世界</a>
+                            <a target="_blank" href="/course/list?c=nlp">绝地求生</a>
+                            <a target="_blank" href="/course/list?c=nlp">英雄联盟</a>
+                            <a target="_blank" href="/course/list?c=nlp">地下城与勇士</a>
+                            <a target="_blank" href="/course/list?c=nlp">火箭联盟</a>
+                        </div>
+                    </div>
+                    <div class="recommentbox">
+                        <div class="l bannercoursecard">
+                            <a href="" target="_blank" title="绝地求生" class="clearfix">
+                                <img src="img/01.jpg" class="l">
+                                <div class="l coursecard">
+                                    <h3 class="coursecardname">绝地求生</h3>
+                                    <div class="coursecardprice l">699mb</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"> 6步／42课</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"><i class="iconset_sns"></i>2233</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="l bannercoursecard">
+                            <a href="" target="_blank" title="地下城与勇士" class="clearfix">
+                                <img src="img/02.jpg" class="l">
+                                <div class="l coursecard">
+                                    <h3 class="coursecardname">地下城与勇士</h3>
+                                    <div class="coursecardinfo l"> 149mb</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"> 初级</div>
+                                    <div class="coursecardinfo l"><i class="iconset_sns"></i>18428</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="l bannercoursecard">
+                            <a href="" target="_blank" title="剑侠情缘三" class="clearfix">
+                                <img src="img/03.jpg" class="l">
+                                <div class="l coursecard">
+                                    </h3>
+                                    <h3 class="coursecardname">剑侠情缘三</h3>
+                                    <div class="coursecardprice l">366mb</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l">高级</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"><i class="iconset_sns"></i>2098</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="l bannercoursecard">
+                            <a href="" target="_blank" title="冒险岛2" class="clearfix">
+                                <img src="img/04.jpg" class="l">
+                                <div class="l coursecard">
+                                    <h3 class="coursecardname">冒险岛2</h3>
+                                    <div class="coursecardprice l">266mb</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l">中级</div>
+                                    <div class="coursecarddot l"><i class="imv2dot_samll">.</i></div>
+                                    <div class="coursecardinfo l"><i class="iconset_sns"></i>1024</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="contence">
+        <div id="content">
+            <div id="lunbo" style="left: -890px">
+                <img src="img/lun5.jpg">
+                <img src="img/lun1.jpg">
+                <img src="img/lun2.jpg">
+                <img src="img/lun3.jpg">
+                <img src="img/lun4.jpg">
+                <img src="img/lun5.jpg">
+                <img src="img/lun1.jpg">
+            </div>
+            <div id="buttons">
+                <span index="1" class="on"></span>
+                <span index="2"></span>
+                <span index="3"></span>
+                <span index="4"></span>
+                <span index="5"></span>
+            </div>
+            <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+            <a href="javascript:;" id="next" class="arrow">&gt;</a>
+        </div>
+        <div class="pathbanner clearfix">
+            <a href="" target="_blank">
+                <i class="iweb"><img src="img/conten1.png" alt=""></i>
+                <p class="tit">热门网游</p>
+                <p class="desc">英雄联盟</p>
+            </a>
+            <a href="" target="_blank">
+                <i class="ijava"><img src="img/conten2.png" alt=""></i>
+                <p class="tit">角色扮演</p>
+                <p class="desc">魔兽世界</p>
+            </a>
+            <a href="" target="_blank">
+                <i class="ipython"><img src="img/conten3.png" alt=""></i>
+                <p class="tit">射击竞技</p>
+                <p class="desc">反恐精英</p>
+            </a>
+            <a href="" target="_blank">
+                <i class="iandroid"><img src="img/conten4.png" alt=""></i>
+                <p class="tit">休闲游戏</p>
+                <p class="desc">QQ炫舞</p>
+            </a>
+            <a href="" target="_blank">
+                <i class="iphp"><img src="img/conten5.png" alt=""></i>
+                <p class="tit">动作格斗</p>
+                <p class="desc">龙之谷</p>
+            </a>
+        </div>
+    </div>
+    <div class="bgfff">
+        <div class="container-types clearfix">
+            <h3 class="types-title">
+                <img src="img/biao1.png" alt=""><em>网</em>／<em>游</em>／<em>推</em>／<em>荐</em><img src="img/biao.png" alt="">
+            </h3>
+            <div class="clearfix types-content">
+                <div class="index-card-container course-card-container container">
+                    <a target="_blank" class="course-card" href="" data-track="sztj-1-1">
+                        <div class="course-card-top course_cengdie">
+                            <div class="course-banner">
+                                <div class="img-up" style="background-image: url(img/xin1.jpg)">
+                                    <div class="course-stat new">新游</div>
+                                </div>
+                                <div class="img-mid" style="background-image: url(img/xin1.jpg)"></div>
+                                <div class="img-down" style="background-image: url(img/xin1.jpg)"></div>
+                            </div>
+                        </div>
+                        <div class="course-card-content">
+                            <h3 class="course-card-name">首测热游</h3>
+                            <div class="clearfix course-card-bottom">
+                                <div class="course-card-info">
+                                    <span>专区</span><span>攻略</span><span><i class="imv2-set-sns"></i>111</span>
+                                </div>
+                                <div class="course-card-price sales">首测
+                                    <span class="cost-price">9月30号</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="index-card-container course-card-container container">
+                    <a target="_blank" class="course-card" href="">
+                        <div class="course-card-top hashadow">
+                            <img class="course-banner lazy" src="img/xin2.jpg" style="display: inline;">
+                            <div class="course-label">
+                                <label>看广告送积分</label>
+                            </div>
+                        </div>
+                        <div class="course-card-content">
+                            <h3 class="course-card-name">《三国群英传2网络版》精英测试激活通道开启</h3>
+                            <div class="clearfix course-card-bottom">
+                                <div class="course-card-info">
+                                    <span>专区</span><span>攻略</span><span><i class="imv2-set-sns"></i>6480</span>
+                                </div>
+                                <div class="course-card-price sales">7月28号</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="index-card-container course-card-container container">
+                    <a target="_blank" class="course-card" href="">
+                        <div class="course-card-top hashadow">
+                            <img class="course-banner lazy" src="img/xin3.jpg" style="display: inline;">
+                            <div class="course-label">
+                                <label>开局送礼</label>
+                            </div>
+                        </div>
+                        <div class="course-card-content">
+                            <h3 class="course-card-name">《炉石传说》新冒险模式“古墓惊魂”正式开放</h3>
+                            <div class="clearfix course-card-bottom">
+                                <div class="course-card-info">
+                                    <span>专区</span><span>攻略</span><span><i class="imv2-set-sns"></i>434</span>
+                                    <img src="img/pingjia.png" alt="">
+                                </div>
+                                <div class="course-card-price sales">9月30号</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="index-card-container course-card-container container">
+                    <a target="_blank" class="course-card" href="">
+                        <div class="course-card-top hashadow">
+                            <img class="course-banner lazy" src="img/xin4.jpg" style="display: inline;">
+                            <div class="course-label">
+                                <label>抽装备</label>
+                            </div>
+                        </div>
+                        <div class="course-card-content">
+                            <h3 class="course-card-name">《英雄联盟》2019全明星赛回归拉斯维加斯</h3>
+                            <div class="clearfix course-card-bottom">
+                                <div class="course-card-info">
+                                    <span>专区</span><span>攻略</span><span><i class="imv2-set-sns"></i>1585</span>
+                                </div>
+                                <div class="course-card-price sales">3月17号</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="index-card-container course-card-container container">
+                    <a target="_blank" class="course-card" href="">
+                        <div class="course-card-top hashadow">
+                            <img class="course-banner lazy" src="img/xin5.jpg" style="display: inline;">
+                            <div class="course-label">
+                                <label>SpringBoot</label>
+                                <label>Spring Cloud</label>
+                            </div>
+                        </div>
+                        <div class="course-card-content">
+                            <h3 class="course-card-name">《三国群英传2网络版》精英测来袭 测试内容抢先看</h3>
+                            <div class="clearfix course-card-bottom">
+                                <div class="course-card-info">
+                                    <span>实战</span><span>高级</span><span><i class="imv2-set-sns"></i>480</span>
+                                    <img src="img/pingjia.png" alt="">
+                                </div>
+                                <div class="course-card-price sales">1月12号</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg000">
+        <div class="container-types clearfix">
+            <h3 class="types-title">
+                <em>角色</em>／<em>扮演</em>／<em>推</em>／<em>荐</em>
+            </h3>
+            <div class="clearfix types-content">
+                <div class="index-card-container course-card-container container">
+                    <a target="_blank" class="course-card" href="">
+                        <div class="course-stat new">上新</div>
+                        <div class="course-card-top hashadow">
+                            <img class="course-banner lazy" src="img/mokuai1.png" style="display: inline;">
+                            <div class="course-label">
+                                <label>传奇IP</label>
+                                <label>礼包领取</label>
+                            </div>
+                        </div>
+                        <div class="course-card-content">
+                            <h3 class="course-card-name">《问道》全民PK赛战火将燃 热血战斗一触即发</h3>
+                            <div class="clearfix course-card-bottom">
+                                <div class="course-card-info">
+                                    <span>专区</span><span>攻略</span><span><i class="imv2-set-sns"></i>55</span>
+                                    <img src="img/pingjia.png" alt="">
+                                </div>
+                                <div class="course-card-price sales">
+                                    <span class="cost-price">公测</span>
+                                    <span class="sales-tip">限时礼包</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="index-card-container course-card-container container">
+                    <a target="_blank" class="course-card" href="">
+                        <div class="course-stat new">上新</div>
+                        <div class="course-card-top hashadow">
+                            <img class="course-banner lazy" src="img/mokuai2.png" style="display: inline;">
+                            <div class="course-label">
+                                <label>礼包领取</label>
+                            </div>
+                        </div>
+                        <div class="course-card-content">
+                            <h3 class="course-card-name">悦目是佳人 《天下3》汉服活动投票火热开启中！</h3>
+                            <div class="clearfix course-card-bottom">
+                                <div class="course-card-info">
+                                    <span>专区</span><span>攻略</span><span><i class="imv2-set-sns"></i>105</span>
+                                </div>
+                                <div class="course-card-price sales">游戏导读
+                                    <span class="cost-price">公测</span>
+                                    <span class="sales-tip">限时优惠</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="index-card-container course-card-container container">
+                    <a target="_blank" class="course-card" href="">
+                        <div class="course-card-top hashadow">
+                            <img class="course-banner lazy" src="img/you2.jpg" style="display: inline;">
+                            <div class="course-label">
+                                <label>礼包领取</label>
+                            </div>
+                        </div>
+                        <div class="course-card-content">
+                            <h3 class="course-card-name">国风有妖气！《新倩女幽魂》同人绘优秀作品展示！</h3>
+                            <div class="clearfix course-card-bottom">
+                                <div class="course-card-info">
+                                    <span>专区</span><span>攻略</span><span><i class="imv2-set-sns"></i>220</span>
+                                    <img src="img/pingjia.png" alt="">
+                                </div>
+                                <div class="course-card-price sales">游戏导读</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="index-card-container course-card-container container">
+                    <a target="_blank" class="course-card" href="">
+                        <div class="course-card-top hashadow">
+                            <img class="course-banner lazy" src="img/mokuai3.png" style="display: inline;">
+                            <div class="course-label">
+                                <label>礼包领取</label>
+                            </div>
+                        </div>
+                        <div class="course-card-content">
+                            <h3 class="course-card-name">国风有妖气！《新倩女幽魂》同人绘优秀作品展示！</h3>
+                            <div class="clearfix course-card-bottom">
+                                <div class="course-card-info">
+                                    <span>专区</span><span>攻略</span><span><i class="imv2-set-sns"></i>220</span>
+                                    <img src="img/pingjia.png" alt="">
+                                </div>
+                                <div class="course-card-price sales">游戏导读</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="index-card-container course-card-container container">
+                    <a target="_blank" class="course-card" href="">
+                        <div class="course-stat new">上新</div>
+                        <div class="course-card-top hashadow">
+                            <img class="course-banner lazy" src="img/you3.jpg" style="display: inline;">
+                            <div class="course-label">
+                                <label>传奇装备</label>
+                            </div>
+                        </div>
+                        <div class="course-card-content">
+                            <h3 class="course-card-name">悦目是佳人 《天下3》汉服活动投票火热开启中！</h3>
+                            <div class="clearfix course-card-bottom">
+                                <div class="course-card-info">
+                                    <span>专区</span><span>攻略</span><span><i class="imv2-set-sns"></i>1005</span>
+                                </div>
+                                <div class="course-card-price sales">游戏导读
+                                    <span class="cost-price">公测</span>
+                                    <span class="sales-tip">限时优惠</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="index-card-container course-card-container container">
+                    <a target="_blank" class="course-card" href="">
+                        <div class="course-card-top hashadow">
+                            <img class="course-banner lazy" src="img/you4.jpg" style="display: inline;">
+                            <div class="course-label">
+                                <label>礼包领取</label>
+                            </div>
+                        </div>
+                        <div class="course-card-content">
+                            <h3 class="course-card-name">国风有妖气！《新倩女幽魂》同人绘优秀作品展示！</h3>
+                            <div class="clearfix course-card-bottom">
+                                <div class="course-card-info">
+                                    <span>专区</span><span>攻略</span><span><i class="imv2-set-sns"></i>220</span>
+                                    <img src="img/pingjia.png" alt="">
+                                </div>
+                                <div class="course-card-price sales">游戏导读</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="index-card-container course-card-container container">
+                    <a target="_blank" class="course-card" href="">
+                        <div class="course-card-top hashadow">
+                            <img class="course-banner lazy" src="img/you5.jpg" style="display: inline;">
+                            <div class="course-label">
+                                <label>显示礼包</label>
+                            </div>
+                        </div>
+                        <div class="course-card-content">
+                            <h3 class="course-card-name">国风有妖气！《新倩女幽魂》同人绘优秀作品展示！</h3>
+                            <div class="clearfix course-card-bottom">
+                                <div class="course-card-info">
+                                    <span>专区</span><span>攻略</span><span><i class="imv2-set-sns"></i>1220</span>
+                                    <img src="img/pingjia.png" alt="">
+                                </div>
+                                <div class="course-card-price sales">游戏导读</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="index-card-container course-card-container container">
+                    <a target="_blank" class="course-card" href="">
+                        <div class="course-card-top hashadow">
+                            <img class="course-banner lazy" src="img/mokuai3.png" style="display: inline;">
+                            <div class="course-label">
+                                <label>礼包领取</label>
+                            </div>
+                        </div>
+                        <div class="course-card-content">
+                            <h3 class="course-card-name">国风有妖气！《新倩女幽魂》同人绘优秀作品展示！</h3>
+                            <div class="clearfix course-card-bottom">
+                                <div class="course-card-info">
+                                    <span>专区</span><span>攻略</span><span><i class="imv2-set-sns"></i>220</span>
+                                    <img src="img/pingjia.png" alt="">
+                                </div>
+                                <div class="course-card-price sales">游戏导读</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="index-card-container course-card-container container">
+                    <a target="_blank" class="course-card" href="">
+                        <div class="course-card-top hashadow">
+                            <img class="course-banner lazy" src="img/you1.png" style="display: inline;">
+                            <div class="course-label">
+                                <label>传奇装备</label>
+                            </div>
+                        </div>
+                        <div class="course-card-content">
+                            <h3 class="course-card-name">国风有妖气！《新倩女幽魂》同人绘优秀作品展示！</h3>
+                            <div class="clearfix course-card-bottom">
+                                <div class="course-card-info">
+                                    <span>专区</span><span>攻略</span><span><i class="imv2-set-sns"></i>1240</span>
+                                    <img src="img/pingjia.png" alt="">
+                                </div>
+                                <div class="course-card-price sales">游戏导读</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="index-card-container course-card-container container">
+                    <a target="_blank" class="course-card" href="">
+                        <div class="course-stat new">上新</div>
+                        <div class="course-card-top hashadow">
+                            <img class="course-banner lazy" src="img/mokuai2.png" style="display: inline;">
+                            <div class="course-label">
+                                <label>礼包领取</label>
+                            </div>
+                        </div>
+                        <div class="course-card-content">
+                            <h3 class="course-card-name">悦目是佳人 《天下3》汉服活动投票火热开启中！</h3>
+                            <div class="clearfix course-card-bottom">
+                                <div class="course-card-info">
+                                    <span>专区</span><span>攻略</span><span><i class="imv2-set-sns"></i>105</span>
+                                </div>
+                                <div class="course-card-price sales">游戏导读
+                                    <span class="cost-price">公测</span>
+                                    <span class="sales-tip">限时优惠</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bgfff bgnew">
+        <div class="container-types clearfix">
+            <h3 class="types-title">
+                <em>休</em>／<em>闲</em>／<em>游</em>／<em>戏</em>
+            </h3>
+            <div class="clearfix types-content">
+                <div class="adsense-box l" style="background: url(img/backicon1.jpg) no-repeat center center;background-size: 100%;">
+                    <a href="" target="_blank">
+                        <h3 class="ellipsis">休闲游戏，解压缓解情绪</h3>
+                        <p class="ellipsis">本身不仅占用内存较小，而且也是人们无聊时必备游戏。</p>
+                    </a>
+                </div>
+                <div class="adsense-box l" style="background: url(img/backicon2.jpg) no-repeat center center;background-size: 100%;">
+                    <a href="" target="_blank">
+                        <h3 class="ellipsis">盘点最主流的休闲游戏有哪些？</h3>
+                        <p class="ellipsis">连连看+捕鱼达人+开心消消乐...</p>
+                    </a>
+                </div>
+                <div class="index-card-container course-card-container container">
+                    <a target="_blank" class="course-card" href="">
+                        <div class="course-card-top hashadow">
+                            <img class="course-banner lazy" src="img/bgnew1.jpg" style="display: inline;">
+                            <div class="course-label">
+                                <label>猜灯谜</label>
+                            </div>
+                        </div>
+                        <div class="course-card-content">
+                            <h3 class="course-card-name">《我的世界》汇聚全球优秀创造者提供海量玩法内容，共同打造更好的游戏大世界！</h3>
+                            <div class="clearfix course-card-bottom">
+                                <div class="course-card-info">
+                                    <span>大小</span><span>120MB</span><span><i class="imv2-set-sns"></i>128</span>
+                                </div>
+                                <div class="course-card-price sales">window</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="index-card-container course-card-container container">
+                    <a target="_blank" class="course-card" href="">
+                        <div class="course-card-top hashadow">
+                            <img class="course-banner lazy" src="img/bgnew2.jpg" style="display: inline;">
+                            <div class="course-label">
+                                <label>休闲益智</label>
+
+                            </div>
+                        </div>
+                        <div class="course-card-content">
+                            <h3 class="course-card-name">《废土捡漏王》是一款非常好玩的休闲益智类手机游戏，游戏以闯关为主</h3>
+                            <div class="clearfix course-card-bottom">
+                                <div class="course-card-info">
+                                    <span>大小</span><span>10MB</span><span><i class="imv2-set-sns"></i>55</span>
+                                </div>
+                                <div class="course-card-price sales">安卓</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="index-card-container course-card-container container">
+                    <a target="_blank" class="course-card" href="">
+                        <div class="course-stat prove">升级</div>
+                        <div class="course-card-top hashadow">
+                            <img class="course-banner lazy" src="img/bgnew3.jpg" style="display: inline;">
+                            <div class="course-label">
+                                <label>休闲</label>
+                            </div>
+                        </div>
+                        <div class="course-card-content">
+                            <h3 class="course-card-name">《玩命猜歇后语》歇后语，其构造就是前面写一句话介绍，后面用几个简洁的字来总结，是古代人民智慧的结晶。</h3>
+                            <div class="clearfix course-card-bottom">
+                                <div class="course-card-info">
+                                    <span>大小</span><span>122MB</span><span><i class="imv2-set-sns"></i>75</span>
+                                </div>
+                                <div class="course-card-price sales">安卓</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="index-card-container course-card-container container">
+                    <a target="_blank" class="course-card" href="">
+                        <div class="course-stat prove">升级</div>
+                        <div class="course-card-top hashadow">
+                            <img class="course-banner lazy" src="img/you1.png" style="display: inline;">
+                            <div class="course-label">
+                                <label>休闲</label>
+                            </div>
+                        </div>
+                        <div class="course-card-content">
+                            <h3 class="course-card-name">《玩命猜歇后语》歇后语，其构造就是前面写一句话介绍，后面用几个简洁的字来总结，是古代人民智慧的结晶。</h3>
+                            <div class="clearfix course-card-bottom">
+                                <div class="course-card-info">
+                                    <span>大小</span><span>122MB</span><span><i class="imv2-set-sns"></i>155</span>
+                                </div>
+                                <div class="course-card-price sales">安卓+苹果</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="index-card-container course-card-container container">
+                    <a target="_blank" class="course-card" href="">
+                        <div class="course-card-top hashadow">
+                            <img class="course-banner lazy" src="img/bgnew5.jpg" style="display: inline;">
+                            <div class="course-label">
+                                <label>飞行</label>
+                                <label>射击</label>
+                            </div>
+                        </div>
+                        <div class="course-card-content">
+                            <h3 class="course-card-name">《彩虹战机》是一款非常好玩的飞行射击类手游，游戏以广阔的天空为战场</h3>
+                            <div class="clearfix course-card-bottom">
+                                <div class="course-card-info">
+                                    <span>大小</span><span>12kb</span><span><i class="imv2-set-sns"></i>210</span>
+                                    <img src="img/pingjia.png" alt="">
+                                </div>
+                                <div class="course-card-price sales">苹果</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="index-card-container course-card-container container">
+                    <a target="_blank" class="course-card" href="">
+                        <div class="course-card-top hashadow">
+                            <img class="course-banner lazy" src="img/bgnew7.jpg" style="display: inline;">
+                            <div class="course-label">
+                                <label>射击</label>
+                            </div>
+                        </div>
+                        <div class="course-card-content">
+                            <h3 class="course-card-name">《果冻人弓箭手》是一款非常刺激好玩的射箭游戏。</h3>
+                            <div class="clearfix course-card-bottom">
+                                <div class="course-card-info">
+                                    <span>大小</span><span>20kb</span><span><i class="imv2-set-sns"></i>55</span>
+                                </div>
+                                <div class="course-card-price sales">安卓+苹果</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="index-card-container course-card-container container">
+                    <a target="_blank" class="course-card" href="">
+                        <div class="course-stat prove">升级</div>
+                        <div class="course-card-top hashadow">
+                            <img class="course-banner lazy" src="img/bgnew3.jpg" style="display: inline;">
+                            <div class="course-label">
+                                <label>休闲</label>
+                            </div>
+                        </div>
+                        <div class="course-card-content">
+                            <h3 class="course-card-name">《玩命猜歇后语》歇后语，其构造就是前面写一句话介绍，后面用几个简洁的字来总结，是古代人民智慧的结晶。</h3>
+                            <div class="clearfix course-card-bottom">
+                                <div class="course-card-info">
+                                    <span>大小</span><span>122MB</span><span><i class="imv2-set-sns"></i>174</span>
+                                </div>
+                                <div class="course-card-price sales">安卓</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="index-card-container course-card-container container">
+                    <a target="_blank" class="course-card" href="">
+                        <div class="course-card-top hashadow">
+                            <img class="course-banner lazy" src="img/bgnew2.jpg" style="display: inline;">
+                            <div class="course-label">
+                                <label>休闲益智</label>
+
+                            </div>
+                        </div>
+                        <div class="course-card-content">
+                            <h3 class="course-card-name">《废土捡漏王》是一款非常好玩的休闲益智类手机游戏，游戏以闯关为主</h3>
+                            <div class="clearfix course-card-bottom">
+                                <div class="course-card-info">
+                                    <span>大小</span><span>10MB</span><span><i class="imv2-set-sns"></i>55</span>
+                                </div>
+                                <div class="course-card-price sales">安卓+window</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="index-card-container course-card-container container">
+                    <a target="_blank" class="course-card" href="">
+                        <div class="course-stat prove">升级</div>
+                        <div class="course-card-top hashadow">
+                            <img class="course-banner lazy" src="img/bgnew3.jpg" style="display: inline;">
+                            <div class="course-label">
+                                <label>休闲</label>
+                            </div>
+                        </div>
+                        <div class="course-card-content">
+                            <h3 class="course-card-name">《玩命猜歇后语》歇后语，其构造就是前面写一句话介绍，后面用几个简洁的字来总结，是古代人民智慧的结晶。</h3>
+                            <div class="clearfix course-card-bottom">
+                                <div class="course-card-info">
+                                    <span>大小</span><span>122MB</span><span><i class="imv2-set-sns"></i>55</span>
+                                </div>
+                                <div class="course-card-price sales">安卓</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="index-card-container course-card-container container">
+                    <a target="_blank" class="course-card" href="">
+                        <div class="course-card-top hashadow">
+                            <img class="course-banner lazy" src="img/bgnew1.jpg" style="display: inline;">
+                            <div class="course-label">
+                                <label>猜灯谜</label>
+                            </div>
+                        </div>
+                        <div class="course-card-content">
+                            <h3 class="course-card-name">《我的世界》汇聚全球优秀创造者提供海量玩法内容，共同打造更好的游戏大世界！</h3>
+                            <div class="clearfix course-card-bottom">
+                                <div class="course-card-info">
+                                    <span>大小</span><span>120MB</span><span><i class="imv2-set-sns"></i>228</span>
+                                </div>
+                                <div class="course-card-price sales">window</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 侧边条 -->
+    <div id="J_GotoTop" class="elevator">
+        <a href="/user/feedback" class="elevator-msg" target="_blank">
+            <i class="icon-feedback iconfont">&#xe785;</i>
+            <span class="">意见反馈</span>
+        </a>
+        <a href="//www.imooc.com/act/invite" class="elevator-dist" target="_blank">
+            <i class=""></i>
+            <span class="">邀请有奖</span>
+        </a>
+        <a href="/help" class="elevator-faq" target="_blank">
+            <i class="icon-ques iconfont">&#xe7fe;</i>
+            <span class="">帮助中心</span>
+        </a>
+        <a href="//www.imooc.com/mobile/app" target="_blank" class="elevator-app no-goto" id="jsappload">
+            <i class="icon-appdownload iconfont">&#xe854;</i>
+            <span class="">APP下载</span>
+            <div class="elevator-app-box"></div>
+        </a>
+        <a href="javascript:void(0)" class="elevator-weixin no-goto" id="js-elevator-weixin">
+            <i class="icon-wxgzh iconfont">&#xe78a;</i>
+            <span class="">官方微信</span>
+            <div class="elevator-weixin-box"></div>
+        </a>
+        <a href="javascript:void(0)" class="elevator-top " style="display: none;" id="backTop">
+            <i class="icon-up2 iconfont">&#xe7eb;</i>
+            <span class="">返回顶部</span>
+        </a>
+    </div>
+    <div class="bg000 bg0002">
+        <div class="container-types">
+            <h3 class="types-title">
+                <span class="tit-icon icon-art-l tit-icon-l"></span>
+                <em>精</em>／<em>彩</em>／<em>手</em>／<em>记</em>／<em>及</em>／<em>猿</em>／<em>问</em>
+                <span class="tit-icon icon-art-r tit-icon-r"></span>
+            </h3>
+            <dl class="wonderful-list js-wonderful-list types-content" style="height: 1478px;">
+                <dd class="item" style="left: 0px; top: 0px;">
+                    <label class="topic-label">热门话题</label>
+                    <div class="clearfix topic-period">
+                        <a href="" target="_blank" class="big-tit l">#【内推第2波】#<br>
+                            《守望先锋》最佳队友4V4对抗赛今日17：00火热来袭
+                        </a>
+                        <img class="r" src="img/host1.jpg">
+                    </div>
+                    <p class="topic-content">由网易和暴雪举办的2019《守望先锋》最佳队友4v4对抗赛，将于9月20日-22日每天17:00点燃战火。来自全国各地的24位《守望先锋》人气选手、知名主播与大神解说将齐聚线下，进行一场激烈的团队对决。最终获胜队伍将可赢得冠军头衔以及高额的赛事奖金。</p>
+                    <div class="bottom-info clearfix">
+                        <a href="" target="_blank" class="r green">了解详情<i class="icon-right iconfont">&#xe7ee;</i></a>
+                    </div>
+                    <div class="tit-line"><span>往期回顾</span> </div>
+                    <div class="review-topic">
+                        <div class="clearfix topic-period">
+                            <a href="" target="_blank" class="big-tit l">#【获奖名单戳查看更多】#<br> 当我们谈论游戏时，我们都谈些什么？</a>
+                            <img class="r" src="img/host2.jpg">
+                        </div>
+                        <div class="clearfix topic-period">
+                            <a href="" target="_blank" class="big-tit l">#【内推第1波】#<br> 直击大佬操作技巧！行业大佬在线操作</a>
+                            <img class="r" src="img/host3.jpg">
+                        </div>
+                        <div class="clearfix topic-period">
+                            <a href="" target="_blank" class="big-tit l">#【花式填坑】第23期#<br> 网游进化篇：成为游戏大佬有哪些必备条件</a>
+                            <img class="r" src="img/host4.jpg">
+                        </div>
+                    </div>
+                    <div class="bottom-info clearfix"><a href="/" target="_blank" class="r green">更多往期话题<i class="icon-right iconfont">&#xe7ee;</i></a></div>
+                </dd>
+                <dd class="item" style="left: 390px; top: 0px;">
+                    <label class="article-label blue"><i class="icon-blog iconfont">&#xec35;</i>手记文章</label>
+                    <div class="clearfix article-tit">
+                        <a href="/article/287838" target="_blank" class="big-tit l hasimg">征战号角响彻全场！高校联赛《DOTA2》本周日南京、青岛、天津、长春四站同开</a>
+                        <img class="r" src="img/wen1.jpg">
+                    </div>
+                    <div>
+                        <p class="article-content teshu">9月22日，2019完美世界全国高校联赛(秋季赛)首周战斗即将拉开帷幕。本周日DOTA2项目来自南京、青岛、天津、长春的学 子们即将登上赛场，为争夺最强高校而战!如果你也想加入这场热血的战斗，就赶紧来报名吧!
+                        </p>
+                        <div class="bottom-info clearfix">
+                            <span>浏览 13007</span><span>推荐 97</span>
+                            <a href="/article/287838" target="_blank" class="r blue">阅读全文<i class="icon-right iconfont">&#xe7ee;</i></a>
+                        </div>
+                    </div>
+                </dd>
+                <dd class="item" style="left: 780px; top: 0px;">
+                    <label class="article-label blue"><i class="icon-blog iconfont">&#xec35;</i>手记文章</label>
+                    <div class="clearfix article-tit">
+                        <a href="/article/283450" target="_blank" class="big-tit l hasimg">前端技能点学习路线分享，职场进阶的奥秘都在这里了</a>
+                        <img class="r" src="img/wen2.jpg">
+                    </div>
+                    <div>
+                        <p class="article-content">前端怎样入门？ 这一波良心推荐的【前端学习路线】干货，不谈虚的，直接来谈每个阶段要学习的内容 想入门 前端的小伙伴们，那就放马过来吧！ 首先，给大家分享一张最新的以 企业岗位需求为导向前端技能点图，如下 根据前端工程师技能点 图，我们分为四个阶段： 第一阶段：前端基础 （HTML / CSS / HTML5 / CSS3 / JavaScript ） 干货文章： 初识HTML+CSS 【学...</p>
+                        <div class="bottom-info clearfix">
+                            <span>浏览 27974</span><span>推荐 248</span>
+                            <a href="/article/283450" target="_blank" class="r blue">阅读全文<i class="icon-right iconfont">&#xe7ee;</i></a>
+                        </div>
+                    </div>
+                </dd>
+                <dd class="item" style="left: 780px; top: 361px;">
+                    <label class="article-label blue"><i class="icon-blog iconfont">&#xec35;</i>手记文章</label>
+                    <div class="clearfix article-tit">
+                        <a href="/article/279293" target="_blank" class="big-tit l hasimg">【面试技巧系列】找工作、涨薪、跳槽都得来一份</a>
+                        <img class="r" src="img/wen3.jpg">
+                    </div>
+                    <div>
+                        <p class="article-content">面试是程序员求职过程中最重要的一步 别以为面试技巧很虚 很多技术不错的人 恰恰输在了面试技巧上 知识点 怎么复习、问题如何回答 怎么在面试时避免采坑、惊艳面试官 怎么与HR谈论薪资待遇…… 往往这些问题决定你能否成功应聘。 敲黑板划重点 ： 以下面试技巧神器你值得拥有！ 大量干货文章袭来预警~ 一、通用篇 干货文章： 聪明人喜欢这样写简历 如何有效地备战面试 【程序员】 在面...
+                        </p>
+                        <div class="bottom-info clearfix">
+                            <span>浏览 28392</span><span>推荐 125</span>
+                            <a href="/article/279293" target="_blank" class="r blue">阅读全文<i class="icon-right iconfont">&#xe7ee;</i></a>
+                        </div>
+                    </div>
+                </dd>
+                <dd class="item" style="left: 390px; top: 385px;">
+                    <label class="article-label blue"><i class="icon-blog iconfont">&#xec35;</i>手记文章</label>
+                    <div class="clearfix article-tit">
+                        <a href="/article/276492" target="_blank" class="big-tit l hasimg">【涨薪秘籍】安卓工程师的进阶实战之路</a>
+                        <img class="r" src="img/wen4.jpg">
+                    </div>
+                    <div>
+                        <p class="article-content">Android知识杂乱无章，不知道从哪入手？ 技术更新频繁，学不动了，从业者该何去何从？ 工作多年， 年龄上升工资却迟迟不涨，危机感满满，该如何破解？ 是时候该开启你的安卓实战之路啦！涨薪的奥秘都在这里！ 今天小慕给大家带来安 卓三个阶段的学习路线，从项目入手，逐步深入的带你理解并掌握Android的核心技术，帮助你成为具备高薪实力的Android开发者，顺利破 解职场危机！ 不多说啦，上干货。 第一阶...</p>
+                        <div class="bottom-info clearfix">
+                            <span>浏览 9790</span><span>推荐 39</span>
+                            <a href="/article/276492" target="_blank" class="r blue">阅读全文<i class="icon-right iconfont">&#xe7ee;</i></a>
+                        </div>
+                    </div>
+                </dd>
+                <dd class="item" style="left: 0px; top: 683px;">
+                    <label class="article-label blue"><i class="icon-blog iconfont">&#xec35;</i>手记文章</label>
+                    <div class="clearfix article-tit">
+                        <a href="/article/274378" target="_blank" class="big-tit l hasimg">【React学习路线】从零进阶前端核心工程师</a>
+                        <img class="r" src="img/wen5.jpg">
+                    </div>
+                    <div>
+                        <p class="article-content">哈喽，良心推荐小慕又来跟大家分享啦，今天分享的是React~ 面向工资编程，前端核心框架、加薪神器React 了解一下！ React毫无疑问是前端界主流的框架，而框架本身就是热点，可以说是前端工程师们能力提升、快速晋升高级开发工程师的必备 技能。 还不知道如何入门？ 技术提升遇到瓶颈？ 别担心，下面小慕就跟大家详细聊一下React的学习路线，入门到进阶的秘籍都在这里啦！ 第一阶段：React快速入门 ...</p>
+                        <div class="bottom-info clearfix">
+                            <span>浏览 15232</span><span>推荐 99</span>
+                            <a href="/article/274378" target="_blank" class="r blue">阅读全文<i class="icon-right iconfont">&#xe7ee;</i></a>
+                        </div>
+                    </div>
+                </dd>
+                <dd class="item" style="left: 780px; top: 722px;">
+                    <label class="article-label blue"><i class="icon-blog iconfont">&#xec35;</i>手记文章</label>
+                    <div class="clearfix article-tit">
+                        <a href="/article/272795" target="_blank" class="big-tit l hasimg">【干货推荐】java学习进入瓶颈？大牛带你快速攻克！</a>
+                        <img class="r" src="img/wen6.jpg">
+                    </div>
+                    <div>
+                        <p class="article-content">java新手不知如何入门？ 经验多却面临上升瓶颈期？ 想进阶高级工程师还差点火候？ 今天这波最实用的java实 战之路 以战养兵 为你打通职业发展脉络 沿着Java大牛们的思路， 逐步成长为一名业务与思想同样优秀的Java开发者。 就业、晋升、管理均 游刃有余！ 不多说了，上干货！ 阅读指南：本文专为Java开发行业人员设计，分为四个阶段，循序渐进的带你进行SSM框架、SpringBoot框架、 微服务...
+                        </p>
+                        <div class="bottom-info clearfix">
+                            <span>浏览 29077</span><span>推荐 161</span>
+                            <a href="/article/272795" target="_blank" class="r blue">阅读全文<i class="icon-right iconfont">&#xe7ee;</i></a>
+                        </div>
+                    </div>
+                </dd>
+                <dd class="item" style="left: 390px; top: 770px;">
+                    <label class="wenda-label green"><i class="icon-yuanwen iconfont">&#xec2e;</i>相关猿问</label>
+                    <a href="/wenda/detail/383123" target="_blank" class="wenda-tit">【有奖问答】与大咖交流前端JS与框架开发，免费赢取前端图书（11.28-12.4）</a>
+                    <div>
+                        <p class="best-label">最赞回答</p>
+                        <p class="wenda-content">我觉得不管学习哪门语言，到后面总还是要学习一下规范，程序员的素养必不可少啊！！</p>
+                        <div class="bottom-info clearfix">
+                            <a href="/wenda/detail/383123" target="_blank" class="r green">共158个回答<i class="icon-right iconfont">&#xe7ee;</i></a>
+                        </div>
+                    </div>
+                </dd>
+                <dd class="item" style="left: 390px; top: 1029px;">
+                    <label class="wenda-label green"><i class="icon-yuanwen iconfont">&#xec2e;</i>相关猿问</label>
+                    <a href="/wenda/detail/344091" target="_blank" class="wenda-tit">各位猿或者媛，一般几点睡啊。有时忍住头痛看java到很晚，第二天就头痛一整天</a>
+                    <div>
+                        <p class="best-label">已采纳回答</p>
+                        <p class="wenda-content">没有什么事情是需要熬夜完成的</p>
+                        <div class="bottom-info clearfix">
+                            <a href="/wenda/detail/344091" target="_blank" class="r green">共374个回答<i class="icon-right iconfont">&#xe7ee;</i></a>
+                        </div>
+                    </div>
+                </dd>
+                <dd class="item" style="left: 0px; top: 1068px;">
+                    <label class="wenda-label green"><i class="icon-yuanwen iconfont">&#xec2e;</i>相关猿问</label>
+                    <a href="/wenda/detail/338299" target="_blank" class="wenda-tit">java好学吗.??pp</a>
+                    <div>
+                        <p class="best-label">最赞回答</p>
+                        <p class="wenda-content">挺好的！</p>
+                        <div class="bottom-info clearfix">
+                            <a href="/wenda/detail/338299" target="_blank" class="r green">共273个回答<i class="icon-right iconfont">&#xe7ee;</i></a>
+                        </div>
+                    </div>
+                </dd>
+                <dd class="item" style="left: 780px; top: 1107px;">
+                    <label class="wenda-label green"><i class="icon-yuanwen iconfont">&#xec2e;</i>相关猿问</label>
+                    <a href="/wenda/detail/332686" target="_blank" class="wenda-tit">话说，大家想编程的最初初衷是什么</a>
+                    <div>
+                        <p class="best-label">最赞回答</p>
+                        <p class="wenda-content">说兴趣的话有没有人打我....</p>
+                        <div class="bottom-info clearfix">
+                            <a href="/wenda/detail/332686" target="_blank" class="r green">共501个回答<i class="icon-right iconfont">&#xe7ee;</i></a>
+                        </div>
+                    </div>
+                </dd>
+                <dd class="item" style="left: 390px; top: 1264px;">
+                    <label class="wenda-label green"><i class="icon-yuanwen iconfont">&#xec2e;</i>相关猿问</label>
+                    <a href="/wenda/detail/351144" target="_blank" class="wenda-tit">为啥要做程序员，初心是什么？</a>
+                    <div>
+                        <p class="best-label">最赞回答</p>
+                        <p class="wenda-content">&lt;...code...&gt;</p>
+                        <div class="bottom-info clearfix">
+                            <a href="/wenda/detail/351144" target="_blank" class="r green">共156个回答<i class="icon-right iconfont">&#xe7ee;</i></a>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="elite-bg">
+        <div class="container-types container-teacher-types clearfix">
+            <h3 class="types-title">
+                <span class="tit-icon icon-teacher-l tit-icon-l"></span>
+                <em>游</em>／<em>戏</em>／<em>精</em>／<em>英</em>／<em>名</em>／<em>师</em>
+                <span class="tit-icon icon-teacher-r tit-icon-r"></span>
+                <a href="/lecturer/" class="types-title-more" target="_blank">
+                    <span>查看更多</span><i class="imv2-arrow2_r"></i>
+                </a>
+            </h3>
+            <div class="lecturer-container js-lecturer-container swiper-container-horizontal">
+                <div class="swiper-wrapper js-swiper-wrap" style="left:-1152px">
+                    <div class="clearfix swiper-slide" style="width: 1152px; margin-right: 30px;">
+                        <a target="_blank" href="//www.imooc.com/u/4294850" class="lecturer-item">
+                            <img class="lecturer-uimg" src="img/bgnew1.jpg" title="7七月">
+                            <span class="lecturer-name">7七月</span>
+                            <span class="lecturer-title">全栈工程师</span>
+                            <span class="lecturer-p" title="十年研发及团队管理经验，对程序员面临的各种问题深有体会；精通Python、Java、Node.js、JavaScript等语言，对Web的基础研发、高并发处理
+                            与分布式有非常深入的理解。课程讲解深入浅出，极为擅长培养学生的编程思维。">十年研发及团队管理经验，对程序员面临的各种问题深有体会；精通Python、Java、Node.js
+                            、JavaScript等语言，对Web的基础研发、高并发处理与分布式有非常深入的理解。课程讲解深入浅出，极为擅长培养学生的编程思维。</span>
+                        </a>
+                        <a target="_blank" href="//www.imooc.com/u/4559066" class="lecturer-item">
+                            <img class="lecturer-uimg" src="img/bgnew2.jpg" title="廖师兄">
+                            <span class="lecturer-name">廖师兄</span><span class="lecturer-title">JAVA开发工程师</span>
+                            <span class="lecturer-p" title="载着干货的老司机。微服务，分布式架构方面经验丰富。">载着干货的老司机。微服务，分布式架构方面经验丰富。</span>
+                        </a>
+                        <a target="_blank" href="//www.imooc.com/u/108955" class="lecturer-item">
+                            <img class="lecturer-uimg" src="img/bgnew3.jpg" title="liuyubobobo">
+                            <span class="lecturer-name">liuyubobobo</span><span class="lecturer-title">全栈工程师</span>
+                            <span class="lecturer-p" title="创业者，全栈工程师，持续学习者。对技术开发，产品设计、前后端，ios，html5，智能算法等领域均有接触；拥有多
+                            款独立App作品；对一切可编程的东西有浓厚兴趣，对游戏编程格外感兴趣。相信编程改变一切。">创业者，全栈工程师，持续学习者。对技术开发，产品设计、前后
+                            端，ios，html5，智能算法等领域均有接触；拥有多款独立App作品；对一切可编程的东西有浓厚兴趣，对游戏编程格外感兴趣。相信编程改变一切。</span>
+                        </a>
+                        <a target="_blank" href="//www.imooc.com/u/100015" class="lecturer-item">
+                            <img class="lecturer-uimg" src="img/bgnew4.jpg" title="慕课官方号">
+                            <span class="lecturer-name">慕课官方号</span><span class="lecturer-title">页面重构设计</span>
+                            <span class="lecturer-p" title="慕课，Massive（大规模）Open（开放）Online（在线）Course（课程）。专注做好IT技能教育的MOOC，符合互联网发展潮流
+                            接地气儿的MOOC。我们有更多免费资源，我们只教有用的，我们专心做教育。">慕课，Massive（大规模）Open（开放）Online（在线）Course（课程）。专注做好IT
+                            技能教育的MOOC，符合互联网发展潮流接地气儿的MOOC。我们有更多免费资源，我们只教有用的，我们专心做教育。</span>
+                        </a>
+                        <a target="_blank" href="//www.imooc.com/u/141256" class="lecturer-item">
+                            <img class="lecturer-uimg" src="img/bgnew5.jpg" title="Oeasy">
+                            <span class="lecturer-name">咚咚呛</span><span class="lecturer-title">页面重构设计</span>
+                            <span class="lecturer-p" title="他，授课风趣幽默，激情四射，自称屌丝青年，中国传媒大学计算机教师；他，专注于网页制作、平面设计、多媒体等多个领域
+                            及应用的挖掘与创新，热爱分享，是新鲜热门软件和应用的导航标，他就是众粉丝心中的“Oeasy老湿”">他，授课风趣幽默，激情四射，自称屌丝青年，中国传媒大学计算
+                            机教师；他，专注于网页制作、平面设计、多媒体等多个领域的软件以及应用的挖掘与创新，热爱分享，是新鲜热门软件和应用的导航标，他就是众粉丝心中的“Oeasy老湿”</span>
+                        </a>
+                    </div>
+                    <div class="clearfix swiper-slide" style="width: 1152px; margin-right: 30px;">
+                        <a target="_blank" href="//www.imooc.com/u/4294850" class="lecturer-item">
+                            <img class="lecturer-uimg" src="img/teac1.jpg" title="7七月">
+                            <span class="lecturer-name">anshds</span>
+                            <span class="lecturer-title">前端工程师</span>
+                            <span class="lecturer-p" title="十年研发及团队管理经验，对程序员面临的各种问题深有体会；精通Python、Java、Node.js、JavaScript等语言，对Web的基础研发、高并发处理
+                            与分布式有非常深入的理解。课程讲解深入浅出，极为擅长培养学生的编程思维。">曾在Apple、百度担任高级前端开发工程师，是《React全栈:Redux Flux webpack Babel整合开发》该书作者，
+                            拥有丰富的Web开发经验，喜欢追寻新技术,同时致力于前端工程化，并且有大型SPA项目的架构及开发经验。</span>
+                        </a>
+                        <a target="_blank" href="//www.imooc.com/u/4559066" class="lecturer-item">
+                            <img class="lecturer-uimg" src="img/teac2.jpg" title="廖师兄">
+                            <span class="lecturer-name">张轩</span><span class="lecturer-title">Web前端工程师</span>
+                            <span class="lecturer-p" title="载着干货的老司机。微服务，分布式架构方面经验丰富。">目前在财经界俗称的“大摩”，一家成立于美国纽约的国际金融服务公司-摩根士丹利担任软件工程师和敏捷开发专家。 主攻Event Sourcing架构模式的应用。是一个“只有男同事,没有女同事”的程序媛一枚,先后就职于多家投资银行，
+                                负责开发“每一个bug都很贵”的内部交易系统,主导了股票交易执行系统和衍生品交易风险控制系统。</span>
+                        </a>
+                        <a target="_blank" href="//www.imooc.com/u/108955" class="lecturer-item">
+                            <img class="lecturer-uimg" src="img/teac3.jpg" title="liuyubobobo">
+                            <span class="lecturer-name">Stannum</span><span class="lecturer-title">软件工程师</span>
+                            <span class="lecturer-p" title="创业者，全栈工程师，持续学习者。对技术开发，产品设计、前后端，ios，html5，智能算法等领域均有接触；拥有多
+                            款独立App作品；对一切可编程的东西有浓厚兴趣，对游戏编程格外感兴趣。相信编程改变一切。">多年Android开发经验，曾任职于优酷等一线互联网企业，现就职于快手基础架构部，有丰富的Android应用架构和SDK开发经验，
+                            喜欢分享，授课风格循序渐进，擅长培养学生的编程思维，深受学员好评。</span>
+                        </a>
+                        <a target="_blank" href="//www.imooc.com/u/100015" class="lecturer-item">
+                            <img class="lecturer-uimg" src="img/teac4.jpg" title="慕课官方号">
+                            <span class="lecturer-name">qndroid</span><span class="lecturer-title">移动开发工程师</span>
+                            <span class="lecturer-p" title="慕课，Massive（大规模）Open（开放）Online（在线）Course（课程）。专注做好IT技能教育的MOOC，符合互联网发展潮流
+                            接地气儿的MOOC。我们有更多免费资源，我们只教有用的，我们专心做教育。">目前就职于BAT的大数据部门，超过4年的技术研发经验，熟悉java、python研发，担任过多个系统研发主程，
+                            目前专注于分布式系统研发，在高并发、分布式系统有丰富的经验。</span>
+                        </a>
+                        <a target="_blank" href="//www.imooc.com/u/141256" class="lecturer-item">
+                            <img class="lecturer-uimg" src="img/teac5.jpg" title="Oeasy">
+                            <span class="lecturer-name">Oeasy</span><span class="lecturer-title">CrazyCodeBoy</span>
+                            <span class="lecturer-p" title="他，授课风趣幽默，激情四射，自称屌丝青年，中国传媒大学计算机教师；他，专注于网页制作、平面设计、多媒体等多个领域
+                            及应用的挖掘与创新，热爱分享，是新鲜热门软件和应用的导航标，他就是众粉丝心中的“Oeasy老湿”">深耕移动端领域8年有余，全栈技术专家，CSDN 博客专家，擅长Android、iOS、Flutter、React Native以及小程序项目开发，负责过前端、Java、Android、iOS等多平台项目的研发，
+                            有多款React Native App上线及管理经验。他享受编程、热爱开源、酷爱分享，平时除了写写博客外，也分享一些开源技术干货 · Github</span>
+                        </a>
+                    </div>
+                    <div class="clearfix swiper-slide" style="width: 1152px; margin-right: 30px;">
+                        <a target="_blank" href="//www.imooc.com/u/4294850" class="lecturer-item">
+                            <img class="lecturer-uimg" src="img/bgnew1.jpg" title="7七月">
+                            <span class="lecturer-name">7七月</span>
+                            <span class="lecturer-title">全栈工程师</span>
+                            <span class="lecturer-p" title="十年研发及团队管理经验，对程序员面临的各种问题深有体会；精通Python、Java、Node.js、JavaScript等语言，对Web的基础研发、高并发处理
+                                与分布式有非常深入的理解。课程讲解深入浅出，极为擅长培养学生的编程思维。">十年研发及团队管理经验，对程序员面临的各种问题深有体会；精通Python、Java、Node.js
+                                、JavaScript等语言，对Web的基础研发、高并发处理与分布式有非常深入的理解。课程讲解深入浅出，极为擅长培养学生的编程思维。</span>
+                        </a>
+                        <a target="_blank" href="//www.imooc.com/u/4559066" class="lecturer-item">
+                            <img class="lecturer-uimg" src="img/bgnew2.jpg" title="廖师兄">
+                            <span class="lecturer-name">廖师兄</span><span class="lecturer-title">JAVA开发工程师</span>
+                            <span class="lecturer-p" title="载着干货的老司机。微服务，分布式架构方面经验丰富。">载着干货的老司机。微服务，分布式架构方面经验丰富。</span>
+                        </a>
+                        <a target="_blank" href="//www.imooc.com/u/108955" class="lecturer-item">
+                            <img class="lecturer-uimg" src="img/bgnew3.jpg" title="liuyubobobo">
+                            <span class="lecturer-name">liuyubobobo</span><span class="lecturer-title">全栈工程师</span>
+                            <span class="lecturer-p" title="创业者，全栈工程师，持续学习者。对技术开发，产品设计、前后端，ios，html5，智能算法等领域均有接触；拥有多
+                                款独立App作品；对一切可编程的东西有浓厚兴趣，对游戏编程格外感兴趣。相信编程改变一切。">创业者，全栈工程师，持续学习者。对技术开发，产品设计、前后
+                                端，ios，html5，智能算法等领域均有接触；拥有多款独立App作品；对一切可编程的东西有浓厚兴趣，对游戏编程格外感兴趣。相信编程改变一切。</span>
+                        </a>
+                        <a target="_blank" href="//www.imooc.com/u/100015" class="lecturer-item">
+                            <img class="lecturer-uimg" src="img/bgnew4.jpg" title="慕课官方号">
+                            <span class="lecturer-name">慕课官方号</span><span class="lecturer-title">页面重构设计</span>
+                            <span class="lecturer-p" title="慕课，Massive（大规模）Open（开放）Online（在线）Course（课程）。专注做好IT技能教育的MOOC，符合互联网发展潮流
+                                接地气儿的MOOC。我们有更多免费资源，我们只教有用的，我们专心做教育。">慕课，Massive（大规模）Open（开放）Online（在线）Course（课程）。专注做好IT
+                                技能教育的MOOC，符合互联网发展潮流接地气儿的MOOC。我们有更多免费资源，我们只教有用的，我们专心做教育。</span>
+                        </a>
+                        <a target="_blank" href="//www.imooc.com/u/141256" class="lecturer-item">
+                            <img class="lecturer-uimg" src="img/bgnew5.jpg" title="Oeasy">
+                            <span class="lecturer-name">咚咚呛</span><span class="lecturer-title">页面重构设计</span>
+                            <span class="lecturer-p" title="他，授课风趣幽默，激情四射，自称屌丝青年，中国传媒大学计算机教师；他，专注于网页制作、平面设计、多媒体等多个领域
+                                及应用的挖掘与创新，热爱分享，是新鲜热门软件和应用的导航标，他就是众粉丝心中的“Oeasy老湿”">他，授课风趣幽默，激情四射，自称屌丝青年，中国传媒大学计算
+                                机教师；他，专注于网页制作、平面设计、多媒体等多个领域的软件以及应用的挖掘与创新，热爱分享，是新鲜热门软件和应用的导航标，他就是众粉丝心中的“Oeasy老湿”</span>
+                        </a>
+                    </div>
+                    <div class="clearfix swiper-slide" style="width: 1152px; margin-right: 30px;">
+                        <a target="_blank" href="//www.imooc.com/u/4294850" class="lecturer-item">
+                            <img class="lecturer-uimg" src="img/teac1.jpg" title="7七月">
+                            <span class="lecturer-name">anshds</span>
+                            <span class="lecturer-title">前端工程师</span>
+                            <span class="lecturer-p" title="十年研发及团队管理经验，对程序员面临的各种问题深有体会；精通Python、Java、Node.js、JavaScript等语言，对Web的基础研发、高并发处理
+                            与分布式有非常深入的理解。课程讲解深入浅出，极为擅长培养学生的编程思维。">曾在Apple、百度担任高级前端开发工程师，是《React全栈:Redux Flux webpack Babel整合开发》该书作者，
+                            拥有丰富的Web开发经验，喜欢追寻新技术,同时致力于前端工程化，并且有大型SPA项目的架构及开发经验。</span>
+                        </a>
+                        <a target="_blank" href="//www.imooc.com/u/4559066" class="lecturer-item">
+                            <img class="lecturer-uimg" src="img/teac2.jpg" title="廖师兄">
+                            <span class="lecturer-name">张轩</span><span class="lecturer-title">Web前端工程师</span>
+                            <span class="lecturer-p" title="载着干货的老司机。微服务，分布式架构方面经验丰富。">目前在财经界俗称的“大摩”，一家成立于美国纽约的国际金融服务公司-摩根士丹利担任软件工程师和敏捷开发专家。 主攻Event Sourcing架构模式的应用。是一个“只有男同事,没有女同事”的程序媛一枚,先后就职于多家投资银行，
+                                负责开发“每一个bug都很贵”的内部交易系统,主导了股票交易执行系统和衍生品交易风险控制系统。</span>
+                        </a>
+                        <a target="_blank" href="//www.imooc.com/u/108955" class="lecturer-item">
+                            <img class="lecturer-uimg" src="img/teac3.jpg" title="liuyubobobo">
+                            <span class="lecturer-name">Stannum</span><span class="lecturer-title">软件工程师</span>
+                            <span class="lecturer-p" title="创业者，全栈工程师，持续学习者。对技术开发，产品设计、前后端，ios，html5，智能算法等领域均有接触；拥有多
+                            款独立App作品；对一切可编程的东西有浓厚兴趣，对游戏编程格外感兴趣。相信编程改变一切。">多年Android开发经验，曾任职于优酷等一线互联网企业，现就职于快手基础架构部，有丰富的Android应用架构和SDK开发经验，
+                            喜欢分享，授课风格循序渐进，擅长培养学生的编程思维，深受学员好评。</span>
+                        </a>
+                        <a target="_blank" href="//www.imooc.com/u/100015" class="lecturer-item">
+                            <img class="lecturer-uimg" src="img/teac4.jpg" title="慕课官方号">
+                            <span class="lecturer-name">qndroid</span><span class="lecturer-title">移动开发工程师</span>
+                            <span class="lecturer-p" title="慕课，Massive（大规模）Open（开放）Online（在线）Course（课程）。专注做好IT技能教育的MOOC，符合互联网发展潮流
+                            接地气儿的MOOC。我们有更多免费资源，我们只教有用的，我们专心做教育。">目前就职于BAT的大数据部门，超过4年的技术研发经验，熟悉java、python研发，担任过多个系统研发主程，
+                            目前专注于分布式系统研发，在高并发、分布式系统有丰富的经验。</span>
+                        </a>
+                        <a target="_blank" href="//www.imooc.com/u/141256" class="lecturer-item">
+                            <img class="lecturer-uimg" src="img/teac5.jpg" title="Oeasy">
+                            <span class="lecturer-name">Oeasy</span><span class="lecturer-title">CrazyCodeBoy</span>
+                            <span class="lecturer-p" title="他，授课风趣幽默，激情四射，自称屌丝青年，中国传媒大学计算机教师；他，专注于网页制作、平面设计、多媒体等多个领域
+                            及应用的挖掘与创新，热爱分享，是新鲜热门软件和应用的导航标，他就是众粉丝心中的“Oeasy老湿”">深耕移动端领域8年有余，全栈技术专家，CSDN 博客专家，擅长Android、iOS、Flutter、React Native以及小程序项目开发，负责过前端、Java、Android、iOS等多平台项目的研发，
+                            有多款React Native App上线及管理经验。他享受编程、热爱开源、酷爱分享，平时除了写写博客外，也分享一些开源技术干货 · Github</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="javascript:;" id="prevnew" class="arrow">&lt;</a>
+                <a href="javascript:;" id="nextnew" class="arrow">&gt;</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer idx-minwidth">
+        <div class="consted">
+            <div class="footer-wrap idx-width">
+                <div class="footer-sns clearfix">
+                    <div class="l">
+                        <a href="javascript:void(0);" class="footer-sns-weixin" target="_blank" title="微信">
+                            <i class="iconfont">&#xe884;</i>
+                            <span class="footer-sns-weixin-expand "><img src="img/newerwei.png" alt=""></span>
+                        </a>
+                        <p>官方公众号</p>
+                    </div>
+                    <div class="l">
+                        <a href="" class="footer-sns-weibo hide-text" target="_blank" title="新浪微博">
+                            <i class="iconfont">&#xe883;</i></a>
+                        <p>官方微博</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-link">
+                <a href="/index/companytrain" target="_blank" title="企业合作">企业合作</a>
+                <a href="/about/job" target="_blank" title="人才招聘">人才招聘</a>
+                <a href="/about/contact" target="_blank" title="联系我们">联系我们</a>
+                <a href="/about/recruit" target="_blank" title="讲师招募">讲师招募</a>
+                <a href="/help" target="_blank" title="帮助中心">帮助中心</a>
+                <a href="/user/feedback" target="_blank" title="意见反馈">意见反馈</a>
+                <a href="http://daxue.imooc.com/" target="_blank">慕课大学</a>
+                <a href="https://git.imooc.com" target="_blank">代码托管</a>
+                <a href="/about/friendly" target="_blank" title="友情链接">友情链接</a>
+            </div>
+            <div class="footer-copyright">
+                <p><img src="img/a9.png" alt="">&nbsp;2019&nbsp;imooc.com&nbsp;&nbsp;京ICP备 12003892号-11 北京奥鹏文化传媒有限公司</p>
+            </div>
+        </div>
+    </div>
+    <script src="js1/jquery.js"></script>
+    <script src="js1/home.js"></script>
+    <script>
+        //li 2轮条形轮播
+        function pianyi(num) {
+            var pianyi = parseInt($(".js-swiper-wrap").css("left")) + num + "px";
+            $(".js-swiper-wrap").css("left", pianyi);
+        }
+        $("#nextnew").click(function() {
+            var left = parseInt($(".js-swiper-wrap").css("left"))
+            if (left < -1152) {
+                $(".js-swiper-wrap").css("left", "-1152px");
+            } else {
+                pianyi(-1182);
+            }
+        })
+        $("#prevnew").click(function() {
+            var left = parseInt($(".js-swiper-wrap").css("left"))
+            console.log(left)
+            if (left > -1152) {
+                $(".js-swiper-wrap").css("left", "-2334px");
+            } else {
+                pianyi(1182);
+            }
+        })
+        var timer;
+
+        function play() {
+            timer = setInterval(() => {
+                $("#nextnew").click();
+            }, 2500);
+        }
+
+        function stop() {
+            clearInterval(timer);
+        }
+        $(".lecturer-container").hover(
+            function() {
+                stop()
+            },
+            function() {
+                play()
+            }
+        )
+    </script>
+    <script>
+        window.onload = function() {
+            //轮播1
+            var content = document.getElementById("content");
+            var lunbo = document.getElementById("lunbo");
+            var imgs = document.getElementById("lunbo").getElementsByTagName("img");
+            var buttons = document.getElementById("buttons").getElementsByTagName("span")
+            var prev = document.getElementById("prev");
+            var next = document.getElementById("next");
+            var index = 1; //当前亮起的小圆点
+            var animated = false; //当前动画是否在播放
+            //亮起的小圆点
+            function showButton() {
+                //亮起当前的按钮亮，其他的按钮关闭
+                for (var i = 0; i < buttons.length; i++) {
+                    if (buttons[i].className == "on") {
+                        buttons[i].className = "";
+                        break;
+                    }
+                }
+                buttons[index - 1].className = "on";
+            }
+            //传参表示向左向右滑动
+            function animate(long) {
+                animated = true;
+                var newleft = parseInt(lunbo.style.left) + long;
+
+                var time = 1000; //移动的总时间
+                var interval = 10; //多久移动一次
+                var speed = long / (time / interval); //每次移动距离
+
+                //位移判断和是否位移
+                function go() {
+                    if ((speed < 0 && parseInt(lunbo.style.left) > newleft) || (speed > 0 && parseInt(lunbo.style.left) < newleft)) {
+                        //将一张图片每个interval的时间移一次，移了（time/interval）次，总共移动time的时间
+                        lunbo.style.left = parseInt(lunbo.style.left) + speed + "px";
+                        setTimeout(go, interval); //递归，当图片没有完全显露出来，再次调用自身，再移
+                    } else {
+                        animated = false;
+                        lunbo.style.left = newleft + "px";
+                        //判断向左向右的left值超过界限时，设置回到初始值
+                        if (newleft > -890) {
+                            lunbo.style.left = -4450 + "px";
+                        }
+                        if (newleft < -4450) {
+                            lunbo.style.left = -890 + "px";
+                        }
+                    }
+                }
+                go();
+            }
+            var timer; //存放定时器
+            //自动播放
+            function play() {
+                timer = setInterval(function() {
+                    next.onclick();
+                }, 3000);
+            }
+            //停止清除定时器
+            function stop() {
+                clearInterval(timer);
+            }
+            next.onclick = function() {
+                //当index值超过界限时，使其值返回初始值
+                if (index == 5) {
+                    index = 1;
+                } else {
+                    index += 1; //向右点击一次当前圆点加一
+                }
+                showButton();
+                //判断是否在动画，是就不做操作，否才操作
+                //使得快速连击时不会卡顿
+                if (!animated) {
+                    animate(-890);
+                }
+
+            }
+            prev.onclick = function() {
+                    //当index值超过界限时，使其值返回初始值
+                    if (index == 1) {
+                        index = 5;
+                    } else {
+                        index -= 1; //向左点击一次当前圆点减一
+                    }
+                    showButton();
+                    if (!animated) {
+                        animate(890);
+                    }
+                }
+                //给每个button小圆点都加上点击事件
+                //小圆点可能不是一个个挨着点，可能是跳着点，即从第一个切换到第四个
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].onclick = function() {
+                    //判断当点击同一个按钮时，使该函数不会继续运行，直接退出该函数
+                    if (this.className == "on") {
+                        return;
+                    }
+                    var myIndex = parseInt(this.getAttribute("index")); //点击的圆点index值
+                    var long = -890 * (myIndex - index); //index为当前播当前播放到的圆点值  offset每次切换的偏移量
+                    if (!animated) {
+                        animate(long); //调用切换图片的函数
+                    }
+                    index = myIndex; //切完后把之前index值设置为当前myIndex，及更新index值
+                    showButton(); //调用显示按钮亮起的函数，使点击时按钮的亮起也跟着改变
+                }
+            }
+            content.onmouseover = stop;
+            content.onmouseout = play;
+
+        }
+    </script>
+    <script>
+        $(".course_cengdie").hover(
+            function() {
+                $(".img-up").css("top", "-13px");
+                $(".img-mid").css({
+                    "width": "200px",
+                    "top": "-1px"
+                });
+                $(".img-down").css({
+                    "width": "180px",
+                    "left": "15px"
+                });
+            },
+            function() {
+                $(".img-up").css("top", "0");
+                $(".img-mid").css({
+                    "width": "208px",
+                    "top": "4px"
+                });
+                $(".img-down").css({
+                    "width": "200px",
+                    "left": "8px"
+                });
+            }
+        )
+        $(".headersignin").children("a").hover(
+            function(e) {
+                e.target.style.color = "red";
+            },
+            function(e) {
+                e.target.style.color = "#4D555D";
+            }
+        )
+        $(".searchinput").focus(function() {
+            $(".searchTags").css("display", "none");
+            $(".searcharea").css("border-bottom", "1px solid red");
+            $(".showhidesearch>i").css({
+                "border": " 1px solid",
+                "border-radius": '11px',
+                "background": "red",
+                "color": "white",
+            })
+        }).focusout(function() {
+            $(".searchTags").css("display", "block");
+            $(".searcharea").css("border-bottom", "1px solid rgba(223, 223, 223, 0.4)");
+            $(".showhidesearch>i").css({
+                "border": "none",
+                "border-radius": 'none',
+                "background": "white",
+                "color": "#757a7e",
+            })
+        });
+        //侧边条切换
+        $(".elevator>a").hover(
+            function() {
+                $(this).children()[0].style.display = "none";
+                $(this).children()[1].style.display = "block";
+            },
+            function() {
+                $(this).children()[0].style.display = "block";
+                $(this).children()[1].style.display = "none";
+            }
+        )
+        $(".no-goto").hover(
+                function() {
+                    $(this).children()[2].style.display = "block";
+                },
+                function() {
+                    $(this).children()[2].style.display = "none";
+                }
+            )
+            //判断高度，返回顶部
+        $("#backTop").click(function() {
+            $("html,body").animate({
+                scrollTop: 0
+            }, "fast");
+        })
+        $(window).scroll(function() {
+                if ($(window).scrollTop() > 500) {
+                    $("#backTop").fadeIn(500);
+                } else {
+                    $("#backTop").fadeOut(500);
+                }
+            })
+            // elite-bg .container-types .lecturer-item
+        $(".container-types .lecturer-item").hover(
+            function() {
+                $(this).children(":eq(0)").animate({
+                    marginLeft: "-33px",
+                    width: "64px",
+                    height: "62px",
+                }, 500);
+                $(this).children(":eq(1),:eq(2)").slideUp(500);
+                $(this).children(":eq(3)").animate({
+                    top: "62px",
+                    height: "169px"
+                }, 500)
+            },
+            function() {
+                $(this).children(":eq(0)").animate({
+                    marginLeft: "-48px",
+                    width: "96px",
+                    height: "96px",
+                }, 500);
+                $(this).children(":eq(1),:eq(2)").slideDown(500);
+                $(this).children(":eq(3)").animate({
+                    top: "0",
+                    height: "72px"
+                }, 500)
+            }
+        )
+    </script>
+</body>
+
+</html>

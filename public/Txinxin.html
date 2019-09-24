@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>让世界成为我们的游戏场</title>
+    <link rel="shortcut icon" type="image/x-icon" href="image/icon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <!-- 游戏云引 -->
+    <link rel="stylesheet" type="text/css" href="css/tagscloud.css">
+    <link rel="stylesheet" type="text/css" href="css/dropdown.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-2.1.4.min.js"></script>
+
+</head>
+<style>
+    * {
+        list-style-type: none;
+    }
+    
+    .main {
+        float: left;
+        margin-top: -22px;
+        z-index: 1;
+    }
+    
+    #container {
+        float: left;
+        width: 1366px;
+        height: 28px;
+        margin-top: 7px;
+        margin-left: 8px;
+        color: red;
+    }
+    
+    .first-left {
+        float: left;
+        margin-left: -8px;
+        margin-top: -12px;
+        width: 96px;
+        height: 28px;
+    }
+    
+    .content {
+        position: absolute;
+        float: left;
+        width: 195px;
+        height: 45px;
+        border: 1px solid white;
+        border-color: #ffc;
+        background-color: #f9f9f9;
+        margin-top: 50px;
+        margin-left: -106px;
+        z-index: 4;
+    }
+    
+    .bo {
+        float: left;
+        width: 11px;
+        height: 28px;
+        margin-top: -12px;
+        background-color: #75290c00;
+        z-index: 2;
+    }
+    
+    .box {
+        /* 三角形的创建 */
+        float: left;
+        width: 0px;
+        height: 0px;
+        margin-left: -9px;
+        margin-top: 1px;
+        z-index: 2;
+        border: 4px solid;
+        border-color: #15e208 transparent transparent transparent;
+        border-style: solid dashed dashed dashed;
+    }
+    
+    .a {
+        float: left;
+        width: 30px;
+        height: 30px;
+        color: rgba(255, 255, 254, 0.98);
+        margin-left: 10px;
+        padding-left: 1px;
+        padding-top: 10px;
+        z-index: 3;
+        background-color: #f9f9f9;
+    }
+    
+    .aa {
+        float: left;
+        width: 100px;
+        height: 31px;
+        border: 1px solid white;
+        font-size: 15px;
+        margin-left: 35px;
+        margin-top: 13px;
+        z-index: 3;
+        background-color: #f9f9f9;
+    }
+    
+    .content1 {
+        position: absolute;
+        float: left;
+        margin-top: 28px;
+        background-color: #f9f9f9;
+        z-index: 2;
+    }
+    
+    .bb2 {
+        width: 100px;
+        height: 30px;
+        z-index: 2;
+        border: 1px solid white;
+    }
+    
+    .bb2:hover {
+        color: blue;
+    }
+    
+    .border {
+        width: 200px;
+        height: 72px;
+        margin-left: 97px;
+        margin-top: -28px;
+        border: 1px purple;
+        z-index: 3;
+        background-color: #f9f9f9;
+    }
+    
+    .border:hover {
+        color: gray;
+    }
+    
+    .header {
+        float: left;
+        margin-left: 0px;
+        margin-top: -30px;
+    }
+    
+    .tabs {
+        /* 点击框滑动 */
+        list-style: none;
+        padding: 0
+    }
+    
+    .tabs a {
+        /* 点击框滑动 */
+        /* 标准文本 */
+        text-decoration: none;
+        color: #000;
+        padding: 6px 12px;
+        /* 融合行内于块级 */
+        display: inline-block;
+    }
+    
+    .tabs a:hover {
+        /* 点击框滑动 */
+        color: blue;
+    }
+    
+    .tabs>li {
+        /* 点击框滑动 */
+        float: left;
+        border-bottom: 1px solid #000;
+    }
+    
+    .tabs>.active {
+        /* 点击框滑动 */
+        border: 1px solid #000;
+        border-bottom: 0;
+    }
+    
+    .right {
+        width: 62px;
+        height: 26px;
+        margin-left: 1097px;
+        /* border: 1px solid red; */
+        margin-top: 2px;
+    }
+    
+    .right:hover {
+        color: gray;
+    }
+    
+    .first-right {
+        float: left;
+        margin: -8px 1px 0px 280px;
+    }
+    
+    .uname {
+        float: left;
+        margin-top: -5px;
+    }
+    
+    .box1 {
+        /* 三角形 */
+        float: left;
+        width: 0px;
+        height: 0px;
+        margin-left: -11px;
+        margin-top: 19px;
+        z-index: 2;
+        border: 4px solid;
+        border-color: black transparent transparent transparent;
+        border-style: solid dashed dashed dashed;
+    }
+    
+    .box2 {
+        /* 三角形 */
+        width: 0px;
+        height: 0px;
+        margin-left: -5px;
+        padding-top: -11px;
+        z-index: 2;
+        border: 4px solid;
+        border-color: black transparent transparent transparent;
+        border-style: solid dashed dashed dashed
+    }
+    
+    .box3 {
+        /* 三角形 */
+        width: 0px;
+        height: 0px;
+        margin-left: -5px;
+        margin-top: 19px;
+        z-index: 2;
+        border: 4px solid;
+        border-color: black transparent transparent transparent;
+        border-style: solid dashed dashed dashed;
+    }
+    
+    .first-right1 {
+        float: left;
+        margin: -8px 11px 0px -1px;
+    }
+    
+    .right1 {
+        float: left;
+        height: 35px;
+        margin-left: 207px;
+        background-color: rgb(194, 194, 194);
+    }
+    
+    .right1:hover {
+        background-color: gray;
+    }
+    
+    .right11 {
+        float: left;
+    }
+    
+    span>img {
+        width: 28px;
+        height: 36px;
+    }
+    
+    span>img:hover {
+        opacity: 0.5;
+    }
+    
+    #delta {
+        /* 三角形 */
+        width: 0px;
+        height: 0px;
+        margin-left: 89px;
+        margin-top: -14px;
+        z-index: 2;
+        border: 4px solid;
+        border-color: transparent transparent transparent black;
+        border-style: solid dashed dashed dashed;
+    }
+    
+    .drop {
+        /* 下拉框的实现 */
+        position: relative;
+        display: inline-block;
+    }
+    
+    .drop_con {
+        /* 下拉框的实现 */
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        margin-left: -45px;
+        min-width: 122px;
+    }
+    
+    .drop:hover .drop_con {
+        /* 下拉框的实现 */
+        display: block;
+    }
+    
+    .x {
+        /* position: relative; */
+        display: inline-block;
+    }
+    
+    .x1 {
+        display: none;
+        position: absolute;
+        /* background-color: #f9f9f9; */
+        min-width: 100px;
+        top: 20px;
+    }
+    
+    .po {
+        width: 20px;
+        height: 30px;
+        z-index: -1;
+    }
+    
+    .x:hover .x1 {
+        display: block;
+    }
+    
+    #title {
+        /* 给标题添加一个炫彩的效果 */
+        font-size: 40px;
+        padding-left: 180px;
+        margin-top: 5px;
+        background-image: -webkit-linear-gradient(left, blue, #66ffff 10%, #cc00ff 20%, #CC00CC 30%, #CCCCFF 40%, #00FFFF 50%, #CCCCFF 60%, #CC00CC 70%, #CC00FF 80%, #66FFFF 90%, blue 100%);
+        -webkit-text-fill-color: transparent;
+        /* 将字体设置成透明色 */
+        background-clip: text;
+        -webkit-background-clip: text;
+        /* 裁剪背景图，使文字作为裁剪区域向外裁剪 */
+        background-size: 200% 100%;
+        -webkit-background-size: 200% 100%;
+        animation: masked-animation 4s linear infinite;
+        -webkit-animation: masked-animation 4s linear infinite;
+    }
+    
+    @keyframes masked-animation {
+        0% {
+            background-position: 0 0;
+        }
+        100% {
+            background-position: -100% 0;
+        }
+    }
+    
+    @-webkit-keyframes masked-animation {
+        0% {
+            background-position: 0 0;
+        }
+        100% {
+            background-position: -100% 0;
+        }
+    }
+    
+    .icon1 {
+        width: 195px;
+        height: 318px;
+        margin-top: -10px;
+        margin-left: -4px;
+    }
+    
+    .icon2 {
+        width: 614px;
+        height: 318px;
+        margin-top: -10px;
+        margin-left: -4px;
+    }
+    
+    .icon3 {
+        width: 195px;
+        height: 318px;
+        margin-top: -10px;
+        margin-left: -4px
+    }
+    
+    .first {
+        width: 600px;
+        height: 1000px;
+        z-index: -1;
+    }
+    
+    .border1 {
+        width: 711px;
+        height: 1000px;
+        margin-left: 318px;
+        margin-top: -340px;
+        border-left: 1px solid purple;
+        border-right: 1px solid purple;
+        z-index: 2;
+    }
+    
+    .triangle {
+        /* 下拉框旋转三角形 */
+        float: left;
+        width: 0;
+        height: 0;
+        /* 内容修剪，其余内容不可见 */
+        overflow: hidden;
+        margin-left: 1060px;
+        margin-top: -333px;
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        border-top: 9px solid #5a08b8;
+        z-index: 3;
+    }
+    
+    .triangle:hover {
+        /* 下拉框旋转三角形 */
+        -webkit-transform: rotate(180deg);
+        /* Safari 和 Chrome */
+        transform: rotate(180deg);
+        -webkit-transition: -webkit-transform 0.2s ease-in;
+        /* Safari 和 Chrome */
+        transition: transform 0.2s ease-in;
+    }
+</style>
+
+<body>
+    <div id="container">
+        <div>
+            <img class="first-left" src="image/first-left.jpg" alt="first-left">
+        </div>
+
+        <div class="b">
+            <span class="bo"></span>
+            <span class="box"></span>
+        </div>
+
+        <div class="header">
+            <ul class="tabs">
+                <li class="active">
+                    <a data-toggle="tab" href="#">会员</a>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#">关于音乐</a>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#">歌手</a>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#">神曲</a>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#">视频</a>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#">关于游戏</a>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#">游戏</a>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#">游戏大神</a>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="Txuanzhuan.html">轻松娱乐</a>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#">客服中心</a>
+                </li>
+                <li class="right1">
+                    <img src="image/first-right.jpg" alt="first-right">
+                    <a data-toggle="tab" href="#">
+                        <div class="drop">
+                            <img src="image/first-right1.jpg" alt="first-right">
+                            <span class="right11">夜白</span>
+                            <div class="drop_con" style="font-size:10px;">
+                                <p><img src="image/first-right1-1.jpg">账号信息</p>
+                                <p><img src="image/first-right1-2.jpg">消息中心
+                                    <img src="image/first-right1-2-1.jpg"></p>
+                                <p><img src="image/first-right1-3.jpg">账号安全</p>
+                                <p><img src="image/first-right1-4.jpg">升级会员</p>
+                                <p><img src="image/first-right1-5.jpg">注销(O)</p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <span class="box1"></span>
+
+                <span>
+                            <div class="x">
+                            <a href="Tlajitong.html"><img class="po" src="image/first-right2.jpg" alt="first-right"></a>
+                            <div class="x1">
+                                    <p>烦恼垃圾桶</p>
+                            </div></div>
+                            <img src="image/first-right3.jpg" alt="first-right">
+                            <span class="box2"></span>
+                <img src="image/first-right4.jpg" alt="first-right">
+                <span class="box3"></span>
+                <!-- <img src="image/first-right5.jpg" alt="first-right">
+                <img src="image/first-right6.jpg" alt="first-right"> -->
+                <!-- <img src="image/first-right7.jpg" alt="first-right">
+                <img src="image/first-right8.jpg" alt="first-right"> -->
+                <a href="login.html" id="jssigninbtn" style="font-size: 20px;">登录</a> /
+                <a href="register.html" id="jssignupbtn" style="font-size: 20px;">注册</a>
+                </span>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content" style="display:none">
+        <div class=" border ">
+            <img class="a " src="image/first-left1.jpg ">
+            <span class="aa ">芒种</span>
+        </div>
+
+        <div class="border ">
+            <img class="a " src="image/first-left2.jpg ">
+            <span class="aa ">画</span>
+        </div>
+        <div class="border ">
+            <img class="a " src="image/first-left3.jpg ">
+            <span class="aa ">狂浪</span>
+        </div>
+        <div class="border ">
+            <img class="a " src="image/first-left4.jpg ">
+            <span class="aa ">绿色</span>
+        </div>
+        <div class="border ">
+            <img class="a " src="image/first-left5.jpg ">
+            <span class="aa ">像鱼</span>
+        </div>
+        <div class="border ">
+            <img class="a " src="image/first-left6.jpg ">
+            <span class="aa ">后来</span>
+        </div>
+        <div class="border ">
+            <img class="a " src="image/first-left7.jpg ">
+            <span class="aa ">学猫叫</span>
+        </div>
+        <div class="border ">
+            <img class="a " src="image/first-left8.jpg ">
+            <span class="aa ">生僻字</span>
+        </div>
+        <div class="border ">
+            <img class="a " src="image/first-left9.jpg ">
+            <span class="aa ">都说</span>
+        </div>
+        <div class="border ">
+            <img class="a " src="image/first-left10.jpg ">
+            <span class="aa ">成都</span>
+        </div>
+        <div class="border ">
+            <img class="a " src="image/first-left11.jpg ">
+            <span class="aa ">体面</span>
+        </div>
+        <div class="border "><img class="a " src="image/first-left12.jpg "><span class="aa ">最近</span></div>
+        <div class="border "><img class="a" src="image/first-left13.jpg "><span class="aa ">青花</span></div>
+    </div>
+
+    <div class="content1 " style="display:none ">
+        <div class="bb2 ">伤感
+            <div id="delta"></div>
+        </div>
+        <div class="bb2 ">安静
+            <div id="delta"></div>
+        </div>
+        <div class="bb2 ">轻松
+            <div id="delta"></div>
+        </div>
+        <div class="bb2 ">激情
+            <div id="delta"></div>
+        </div>
+        <div class="bb2 ">甜蜜
+            <div id="delta"></div>
+        </div>
+        <div class="bb2 ">开心
+            <div id="delta"></div>
+        </div>
+        <div class="bb2 ">想念
+            <div id="delta"></div>
+        </div>
+        <div class="bb2 ">疗伤
+            <div id="delta"></div>
+        </div>
+        <div class="bb2 ">迷茫
+            <div id="delta"></div>
+        </div>
+    </div>
+
+    <div id="title">世界———我们人生的游戏娱乐场———游戏商城
+    </div>
+
+    <div id="icon">
+        <a href="#"><img src="image/icon.ico" alt="首图"></a>
+        <a href="#"><img class="icon1" src="image/icon2.png" alt=""></a>
+        <a href="#"><img class="icon2" src="image/icon3.png" alt=""></a>
+        <a href="#"><img class="icon3" src="image/icon1.png" alt=""></a>
+    </div>
+
+    <div id="tagscloud">
+        <a href="#" class="tagc3">穿越火线</a>
+        <a href="#" class="tagc3">梦幻西游2 online</a>
+        <a href="#" class="tagc4">天涯明月刀</a>
+        <a href="#" class="tagc1">极品飞车ONLINE</a>
+        <a href="#" class="tagc5">地下城与勇士(DNF)</a>
+        <a href="#" class="tagc5">使命召唤Online</a>
+        <a href="#" class="tagc4">英雄联盟</a>
+        <a href="my.html" class="tagc1" target="_blank">生命游戏</a>
+        <a href="#" class="tagc2">逆战</a>
+        <a href="#" class="tagc4">御龙在天</a>
+        <a href="#" class="tagc3">剑灵</a>
+        <a href="#" class="tagc3">魔兽世界</a>
+        <a href="#" class="tagc5">修真世界</a>
+        <a href="#" class="tagc1">武动乾坤:神鲲版</a>
+        <a href="#" class="tagc1">魔域web</a>
+        <a href="#" class="tagc3">九天封神</a>
+        <a href="#" class="tagc1">绝世仙王</a>
+        <a href="#" class="tagc1">太极崛起</a>
+        <a href="#" class="tagc5">QQ三国</a>
+        <a href="#" class="tagc4">QQ炫舞</a>
+        <a href="my.html" class="tagc1" target="_blank">生命游戏</a>
+        <a href="#" class="tagc5">QQ飞车</a>
+        <a href="#" class="tagc5">梦幻西游</a>
+        <a href="#" class="tagc3">倩女幽魂</a>
+        <a href="#" class="tagc1">神戒:超变</a>
+        <a href="#" class="tagc1">圣妖传</a>
+        <a href="#" class="tagc1">和平精英</a>
+        <a href="#" class="tagc3">王者荣耀</a>
+        <a href="#" class="tagc1">王牌战士</a>
+        <a href="my.html" class="tagc1" target="_blank">生命游戏</a>
+        <a href="#" class="tagc5">王城英雄</a>
+        <a href="#" class="tagc2">斗罗大陆</a>
+        <a href="#" class="tagc5">超神学院</a>
+        <a href="#" class="tagc3">龙族幻想</a>
+        <a href="#" class="tagc2">完美世界</a>
+        <a href="#" class="tagc5">武动苍穹</a>
+        <a href="#" class="tagc2">灭神</a>
+        <a href="#" class="tagc3">传奇霸业</a>
+        <a href="#" class="tagc1">三国列传</a>
+        <a href="my.html" class="tagc1" target="_blank">生命游戏</a>
+    </div>
+
+    <div id="my-dropdown" class="dropdown">
+        <a data-trigger="dropdown" href="#"><span class="triangle"></span></a>
+        <ul class="dropdown-menu fade">
+            <li><a href="#">青龙游戏商城</a></li>
+            <li><a href="#">白虎游戏商城</a></li>
+            <li><a href="#">朱雀游戏商城</a></li>
+            <li><a href="#">玄武游戏商城</a></li>
+            <li><a href="#">凤凰游戏商城</a></li>
+            <li><a href="#">神龙游戏商城</a></li>
+            <li><a href="#">烛龙游戏商城</a></li>
+            <li><a href="#">炫舞游戏商城</a></li>
+            <li><a href="#">饕餮游戏商城</a></li>
+            <li><a href="#">苍龙游戏商城</a></li>
+            <li><a href="#">应龙游戏商城</a></li>
+            <li><a href="#">孔雀游戏商城</a></li>
+            <li><a href="#">企鹅游戏商城</a></li>
+        </ul>
+    </div>
+
+    <div class="wrap">
+        <div class="p-box">
+            <ul class="tab1">
+                <li class="f01 on"></li>
+                <li class="f02"></li>
+                <li class="f03"></li>
+                <li class="f04"></li>
+                <li class="f05"></li>
+            </ul>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="image/banner1.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="image/banner2.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="image/banner3.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="image/banner4.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="image/banner5.jpg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <img class="char" src="image/char0.png" alt="">
+        </div>
+    </div>
+
+    <div>
+        <div style="margin-left:400px;font-size: 30px;font-family:cursive;text-shadow:6px 2px 2px #333;color:deeppink">【歌舞向/AMV】二次元狂欢-大家一起哈皮</div>
+        <div> <button onclick="playPause()">播放/暂停</button>
+            <button onclick="makeBig()">大</button>
+            <button onclick="makeNormal()">中</button>
+            <button onclick="makeSmall()">小</button></div>
+        <audio controls="controls">
+                <!-- <source src="if.ogg" type="audio/ogg"> -->
+                <source src="image/if.mp3" type="audio/mpeg">
+        </audio>
+        <video id="video1" width="1000px" style="margin-top:10px;" controls="controls">
+            <source src="image/erciyuan.mp4" type="video/mp4" />
+        </video>
+    </div>
+</body>
+<script src="js/tagscloud.js"></script>
+<script src="js/dropdown.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/script.js"></script>
+<script type="text/javascript">
+    //WPS文字的点击下拉框
+    $(document).ready(function() {
+        $(".first-left ").click(function() {
+            $(".content").toggle();
+        });
+    });
+    //下三角形的点击下拉框
+    $(document).ready(function() {
+        $(".b ").click(function() {
+            $(".content1 ").toggle();
+        });
+    });
+</script>
+<script type="text/javascript">
+    //点击框滑动
+    $("[data-toggle=tab]").click(function() {
+        //类的添加与移除
+        $(this).parent().addClass("active").siblings().removeClass("active");
+    })
+</script>
+<script type="text/javascript">
+    //视频操作
+    var myVideo = document.getElementById("video1");
+
+    function playPause() {
+        if (myVideo.paused)
+            myVideo.play();
+        else
+            myVideo.pause();
+    }
+
+    function makeBig() {
+        myVideo.width = 560;
+    }
+
+    function makeSmall() {
+        myVideo.width = 320;
+    }
+
+    function makeNormal() {
+        myVideo.width = 420;
+    }
+</script>
+
+</html>

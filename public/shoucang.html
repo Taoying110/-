@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css1/iconfont.css">
+    <link rel="shortcut icon" href="img/icon.jpg" />
+    <title>网游游戏--收藏</title>
+    <style>
+        /* header */
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+            color: rgb(58, 58, 58);
+        }
+        
+        #header {
+            background: #07111b;
+        }
+        
+        #header .page {
+            height: 37px;
+            width: 1152px;
+            box-shadow: 0 4px 8px 0 rgba(7, 17, 27, 0.1);
+            position: relative;
+            margin: 0 auto;
+        }
+        
+        #header .navitem li {
+            float: left;
+        }
+        
+        #header .navitem li a {
+            padding: 0 13px;
+            display: block;
+            text-align: center;
+            font-size: 14px;
+            height: 37px;
+            line-height: 36px;
+            position: relative;
+            color: rgb(100, 111, 122);
+        }
+        
+        #header .navitem li:hover a {
+            color: #b8b8b8;
+        }
+        
+        #header #loginarea {
+            float: right;
+            position: relative;
+        }
+        
+        #header #loginarea .appdownload {
+            position: relative;
+            line-height: 72px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .appdownload .loadbox {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            width: 304px;
+            padding: 10px 24px 22px;
+            box-sizing: border-box;
+            background-color: #fff;
+            color: #4D555D;
+            line-height: 16px;
+            box-shadow: 0 8px 16px 0 rgba(7, 17, 27, 0.2);
+            border-bottom-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+            z-index: 99999;
+            font-size: 12px;
+        }
+        
+        #header #loginarea .appdownload:hover .loadbox {
+            display: block;
+        }
+        
+        .appdownload .loadbox h4 {
+            margin: 12px 0;
+            font-size: 14px;
+            color: #1C1F21;
+            text-align: center;
+            line-height: 22px;
+        }
+        
+        .appdownload .loadbox img {
+            width: 108px;
+            height: 108px;
+        }
+        
+        .l {
+            float: left;
+        }
+        
+        .r {
+            float: right;
+        }
+        
+        .appdownload .loadbox a.apploadbtn {
+            display: block;
+            color: #fff;
+            width: 132px;
+            height: 36px;
+            margin-bottom: 8px;
+            line-height: 36px;
+            background: #4D555D;
+            border-radius: 18px;
+        }
+        
+        .appdownload .loadbox p {
+            margin-top: 12px;
+            text-align: center;
+        }
+        
+        #header #loginarea .shopcart .shopcarticon {
+            display: inline-block;
+            padding: 0 18px;
+            width: auto;
+            box-sizing: border-box;
+            height: 36px;
+            line-height: 34px;
+            color: #787d82;
+            text-align: center;
+        }
+        
+        .shopcart .shopcarticon span {
+            color: #71777d;
+        }
+        
+        #header #loginarea .unlogin .headersignin {
+            margin-left: 12px;
+            color: rgb(216, 216, 216);
+        }
+        
+        #header #loginarea .unlogin .headersignin a {
+            display: inline-block;
+            color: #4D555D;
+            padding: 0 12px;
+            height: 72px;
+            line-height: 72px;
+            font-size: 14px;
+        }
+        
+        .logined li:hover a {
+            color: white;
+        }
+        
+        #header #loginarea .remind_warp {
+            width: 60px;
+            height: 48px;
+        }
+        
+        #header #loginarea .logined>li>a {
+            display: block;
+            width: 65px;
+            height: 37px;
+            font-size: 11px;
+            line-height: 37px;
+            color: #787d82;
+            text-align: center;
+        }
+        
+        #header #loginarea .remind_warp .icon-notifi {
+            display: block;
+            line-height: 37px;
+            font-size: 22px;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        #header #loginarea .logined>li {
+            float: left;
+            position: relative;
+            text-align: center;
+        }
+        
+        .user-card-box .user-card-item img {
+            width: 24px;
+            height: 24px;
+            border-color: #4d5559;
+        }
+        
+        .set_btn img {
+            border-radius: 50%;
+            vertical-align: middle;
+            display: inline-block;
+            background: url(register_img/menu_icon.png) no-repeat 0 0;
+        }
+        
+        .set_btn img {
+            border: 0;
+        }
+        
+        .showhidesearch {
+            width: 31px;
+            height: 37px;
+            line-height: 36px;
+        }
+        
+        .showhidesearch>i {
+            font-size: 16px;
+            color: #787d82;
+            padding: 0 10px;
+        }
+        
+        .user-card-box .g-user-card {
+            visibility: hidden;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            z-index: 1000;
+            width: 306px;
+            padding: 24px;
+            background-color: #fff;
+            box-shadow: 0 8px 16px 0 rgba(7, 17, 27, 0.2);
+            border-bottom-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+            box-sizing: border-box;
+        }
+        
+        div {
+            background-size: cover;
+        }
+        
+        .user-card-box .g-user-card .card-top {
+            color: #93999f;
+            position: relative;
+        }
+        
+        .user-card-box .g-user-card .card-top a {
+            display: inline-block;
+            color: #93999f;
+        }
+        
+        .user-card-box .g-user-card .card-top a img {
+            float: left;
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            margin-right: 12px;
+        }
+        
+        .user-card-box .g-user-card .card-top .card-top-right-box {
+            margin-top: 14px;
+        }
+        
+        .user-card-box .g-user-card .card-top a {
+            display: inline-block;
+            color: #93999f;
+        }
+        
+        .user-card-box .g-user-card .card-top .name {
+            display: inline-block;
+            font-size: 16px;
+            color: #07111b;
+            width: 170px;
+            line-height: 20px;
+        }
+        
+        .text-ellipsis {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .user-card-box .g-user-card .card-top .meta {
+            margin-top: 4px;
+            font-size: 12px;
+            line-height: 12px;
+        }
+        
+        .user-card-box .g-user-card .card-top .meta a {
+            margin-right: 12px;
+        }
+        
+        .user-card-box .g-user-card .card-top a {
+            display: inline-block;
+            color: #93999f;
+        }
+        
+        .user-card-box .g-user-card .card-top .meta b {
+            margin-left: 2px;
+        }
+        
+        .user-card-box .g-user-card .user-center-box {
+            padding-top: 87px;
+            position: relative;
+        }
+        
+        .user-card-box .g-user-card .user-center-box ul li {
+            position: relative;
+            width: 128px;
+            background: #F8FAFC;
+            border-radius: 2px;
+            color: #4d555d;
+            margin: 0 2px 2px 0;
+        }
+        
+        .user-card-box .g-user-card .user-center-box ul li a {
+            width: 100%;
+            height: 36px;
+            line-height: 36px;
+            padding-left: 12px;
+            text-align: left;
+            box-sizing: border-box;
+            color: black;
+            font-size: 12px;
+        }
+        
+        .user-card-box .g-user-card .user-center-box ul li .user-center-icon {
+            position: relative;
+            top: 3px;
+            font-size: 16px;
+            margin-right: 8px;
+        }
+        
+        .user-card-box .g-user-card .user-center-box ul li:nth-child(2n) {
+            margin-right: 0;
+        }
+        
+        .user-card-box .g-user-card .card-sets {
+            position: relative;
+            bottom: -11px;
+            font-size: 12px;
+            line-height: 12px;
+        }
+        
+        .user-card-box .g-user-card .card-sets a {
+            color: #93999F;
+        }
+        
+        .user-card-box:hover .g-user-card {
+            visibility: visible;
+        }
+        /* 侧边条 */
+        
+        .elevator {
+            z-index: 899;
+        }
+        
+        .elevator {
+            position: fixed;
+            padding: 0 16px;
+            top: 55%;
+            margin-top: -140px;
+            right: 0;
+            z-index: 899;
+            background-color: #fff;
+            box-shadow: 0px 4px 12px 0px rgba(7, 17, 27, 0.1);
+        }
+        
+        .elevator a {
+            display: block;
+            width: 26px;
+            padding: 16px 0;
+            font-size: 22px;
+            line-height: 20px;
+            color: #b5b9bc;
+            box-sizing: border-box;
+            text-align: center;
+            border-bottom: 1px solid #edf1f2;
+        }
+        
+        .elevator a i {
+            font-size: 24px;
+            color: #D9DDE1;
+        }
+        
+        .elevator a span {
+            display: none;
+            font-size: 12px;
+            color: #07111b;
+            line-height: 14px;
+        }
+        
+        .elevator .elevator-dist i {
+            display: inline-block;
+            width: 18px;
+            height: 20px;
+            background: url(./img/hongbao.png) no-repeat;
+            background-size: 100% 100%;
+            background-position: top center;
+            margin: 2px 0;
+        }
+        
+        .elevator .elevator-app-box {
+            position: absolute;
+            width: 172px;
+            height: 212px;
+            bottom: -2px;
+            right: 56px;
+            display: none;
+            background: url(./img/allerweima.png) no-repeat 0 -220px;
+        }
+        
+        .elevator .elevator-weixin-box {
+            position: absolute;
+            width: 172px;
+            height: 212px;
+            bottom: -4px;
+            right: 56px;
+            display: none;
+            background: url(./img/allerweima.png) no-repeat 0 0;
+        }
+        
+        .body-main {
+            min-height: 750px;
+        }
+        
+        .cart-header {
+            height: 160px;
+            background-color: #e3e6e9;
+            background: url(img/newback.jpg) repeat-x left bottom;
+        }
+        
+        .cart-header .cart-header-warp {
+            width: 1104px;
+            height: 120px;
+            line-height: 120px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 14px;
+        }
+        
+        .cart-header .cart-title {
+            color: #4d555d;
+            font-weight: 200;
+            font-size: 14px;
+        }
+        
+        .cart-header .left {
+            float: left;
+        }
+        
+        .cart-header .cart-title h1 {
+            font-size: 32px;
+            line-height: 115px;
+            margin-right: 25px;
+            color: #07111b;
+            font-weight: 200;
+        }
+        
+        .cart-header .right {
+            float: right;
+            margin-right: -350px;
+        }
+        
+        .cart-header .cart-header-warp .myorder-history {
+            font-weight: 200;
+        }
+        
+        .cart-body {
+            width: 1152px;
+            padding: 0 36px 32px;
+            background-color: #fff;
+            margin-top: -40px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 8px 16px 0 rgba(7, 17, 27, .1);
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+        
+        .cart-body .notdata {
+            padding-top: 160px;
+            padding-bottom: 268px;
+            font-size: 24px;
+            color: #4d555d;
+            letter-spacing: 4px;
+            line-height: 36px;
+            font-weight: 200;
+            text-align: center;
+        }
+        /* //footer */
+        
+        .footer {
+            padding: 36px 0;
+            background: black;
+        }
+        
+        .consted {
+            position: relative;
+            margin: 0 auto;
+            width: 1152px;
+        }
+        
+        .footer .footer-wrap {
+            position: absolute;
+            width: auto;
+            right: 0;
+            bottom: 0;
+            margin: 0 auto;
+        }
+        
+        .footer-sns {
+            text-align: center;
+        }
+        
+        .footer .footer-sns>div:first-child {
+            margin-right: 32px;
+        }
+        
+        .footer .footer-sns a {
+            color: #D9DDE1;
+        }
+        
+        .footer-sns a {
+            display: inline-block;
+            height: 32px;
+            width: 32px;
+            vertical-align: middle;
+            margin: 0 9px;
+        }
+        
+        .footer a {
+            display: inline-block;
+            font-size: 14px;
+            color: #4D555D;
+            line-height: 28px;
+            margin: 0;
+            margin-right: 36px;
+        }
+        
+        .footer .footer-sns p {
+            font-size: 12px;
+            color: #4D555D;
+            line-height: 24px;
+            margin-top: 4px;
+        }
+        
+        .footer .footer-link {
+            text-align: left;
+            border: none;
+            padding: 0;
+        }
+        
+        .footer-link a {
+            margin: 0 10px;
+            color: #99a1a6;
+        }
+        
+        .footer .footer-link a:hover {
+            color: rgb(224, 224, 224);
+        }
+        
+        .footer .footer-copyright {
+            font-size: 12px;
+            padding: 0;
+            padding-left: 10px;
+            text-align: left;
+            margin-top: 8px;
+            color: #93999F;
+            line-height: 24px;
+        }
+        
+        .moco-emoji {
+            display: inline;
+            margin: 0;
+        }
+        
+        .footer .footer-sns a:hover {
+            color: #B7BBBF;
+        }
+        
+        .footer-sns-weixin:hover .footer-sns-weixin-expand {
+            display: block;
+        }
+        
+        .footer-sns-weixin .footer-sns-weixin-expand {
+            position: absolute;
+            display: none;
+            width: 172px;
+            height: 212px;
+            z-index: 10;
+            left: -65px;
+            bottom: 57px;
+        }
+        
+        .footer-sns-weixin-expand img {
+            width: 160px;
+        }
+        
+        .footer-sns i {
+            font-size: 35px;
+            margin-left: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <div class="page clearfix" id="nav">
+            <ul class="navitem">
+                <li><a href="home.html" target="_self"> 网游首页</a></li>
+                <li> <a href="" target="_self">资讯</a></li>
+                <li> <a href="" target="_self">商城</a></li>
+                <li><a href="" target="_self">网游</a></li>
+                <li><a href="" target="_self">游戏库</a></li>
+                <li><a href="" target="_self">攻略</a></li>
+                <li><a href="" target="_self">论坛</a></li>
+            </ul>
+            <div id="loginarea" class="afterlogin">
+                <ul class="unlogin clearfix logined">
+                    <li class="appdownload" id="jsappload">
+                        <a href="" class="bianse" target="_blank" style="width:60px;">下载APP</a>
+                        <div class="loadbox clearfix">
+                            <div class="mobileloadbox">
+                                <h4>好玩的网络游戏大全_游侠网</h4>
+                                <img src="img/appload.png" class="l">
+                                <div class="r">
+                                    <a class="apploadbtn" href="https://itunes.apple.com/cn/app/mu-ke-wang/id722179140?mt=8" target="_blank"><i class="icon-apple iconfont">&#xe882;</i>App Store下载</a>
+                                    <a class="apploadbtn" href="" target="_blank"><i class="icon-apple iconfont">&#xe881;</i>Android下载</a>
+                                    <p>扫描下载游侠网APP</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="" class="showhidesearch"><i class="iconfont">&#xe8ef;</i></a>
+                    </li>
+                    <li class="shopcart" id="shopcart">
+                        <a href="" class="shopcarticon" target="_blank">
+                            <span>收藏夹</span>
+                        </a>
+                    </li>
+                    <li class="remind_warp">
+                        <a target="_blank" href="/u/6058012/notices">
+                            <i class="icon-notifi iconfont">&#xe866;</i>
+                        </a>
+                    </li>
+                    <li class="user-mycourse-box">
+                        <a class="user-card-item js-header-courseurl" href="" target="_self">
+                            <span>我的收藏</span>
+                        </a>
+                    </li>
+                    <li class="set_btn user-card-box" id="header-user-card">
+                        <a id="header-avator" class="user-card-item js-header-avator" action-type="my_menu" href="" target="_self">
+                            <img width="40" height="40" src="register_img/menu_icon.png">
+                        </a>
+                        <div class="g-user-card">
+                            <div class="card-inner">
+                                <div class="card-top clearfix">
+                                    <a class="l" href="">
+                                        <img src="register_img/menu_icon.png" alt="慕运维3029433">
+                                    </a>
+                                    <div class="card-top-right-box l">
+                                        <a href="">
+                                            <span class="name text-ellipsis">慕运维3029433</span>
+                                        </a>
+                                        <div class="meta">
+                                            <a href="">经验<b id="js-user-mp">0</b></a>
+                                            <a href="">积分<b id="js-user-credit">0</b></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="user-center-box">
+                                    <ul class="clearfix">
+                                        <li class="l">
+                                            <a href="" target="_blank"> <span class="user-center-icon icon-tick iconfont">&#xe861;</span>我的收藏</a>
+                                        </li>
+                                        <li class="l">
+                                            <a href="//order.imooc.com/myorder" target="_blank"><span class="user-center-icon icon-receipt iconfont">&#xe850;</span>收藏中心</a>
+                                        </li>
+                                        <li class="l">
+                                            <a href="/mall/index" target="_blank"><span class="user-center-icon icon-score_shop iconfont">&#xe871;</span>积分商城</a>
+                                        </li>
+                                        <li class="l">
+                                            <a href="/user/setbindsns" target="_blank"><span class="user-center-icon icon-set iconfont">&#xe872;</span>个人设置</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-sets clearfix">
+                                    <a href="" class="l tuichu">安全退出</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="J_GotoTop" class="elevator">
+        <a href="/user/feedback" class="elevator-msg" target="_blank">
+            <i class="icon-feedback iconfont">&#xe785;</i>
+            <span class="">意见反馈</span>
+        </a>
+        <a href="//www.imooc.com/act/invite" class="elevator-dist" target="_blank">
+            <i class=""></i>
+            <span class="">邀请有奖</span>
+        </a>
+        <a href="/help" class="elevator-faq" target="_blank">
+            <i class="icon-ques iconfont">&#xe7fe;</i>
+            <span class="">帮助中心</span>
+        </a>
+        <a href="//www.imooc.com/mobile/app" target="_blank" class="elevator-app no-goto" id="jsappload">
+            <i class="icon-appdownload iconfont">&#xe854;</i>
+            <span class="">APP下载</span>
+            <div class="elevator-app-box"></div>
+        </a>
+        <a href="javascript:void(0)" class="elevator-weixin no-goto" id="js-elevator-weixin">
+            <i class="icon-wxgzh iconfont">&#xe78a;</i>
+            <span class="">官方微信</span>
+            <div class="elevator-weixin-box"></div>
+        </a>
+        <a href="javascript:void(0)" class="elevator-top " style="display: none;" id="backTop">
+            <i class="icon-up2 iconfont">&#xe7eb;</i>
+            <span class="">返回顶部</span>
+        </a>
+    </div>
+    <div class="body-main">
+        <div class="cart-header">
+            <div class="cart-header-warp clearfix">
+                <div class="cart-title left clearfix">
+                    <h1 class="left">我的收藏</h1>
+                </div>
+                <div class="right">
+                    <span class="left"><a class="js-myorderbtn  myorder-history" href="/myorder">我的收藏历史</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="cart-body" id="cartBody">
+            <p class="notdata">收藏夹内空空如也</p>
+        </div>
+    </div>
+    <div class="footer idx-minwidth">
+        <div class="consted">
+            <div class="footer-wrap idx-width">
+                <div class="footer-sns clearfix">
+                    <div class="l">
+                        <a href="javascript:void(0);" class="footer-sns-weixin" target="_blank" title="微信">
+                            <i class="iconfont">&#xe884;</i>
+                            <span class="footer-sns-weixin-expand "><img src="img/newerwei.png" alt=""></span>
+                        </a>
+                        <p>官方公众号</p>
+                    </div>
+                    <div class="l">
+                        <a href="" class="footer-sns-weibo hide-text" target="_blank" title="新浪微博">
+                            <i class="iconfont">&#xe883;</i></a>
+                        <p>官方微博</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-link">
+                <a href="/index/companytrain" target="_blank" title="企业合作">企业合作</a>
+                <a href="/about/job" target="_blank" title="人才招聘">人才招聘</a>
+                <a href="/about/contact" target="_blank" title="联系我们">联系我们</a>
+                <a href="/about/recruit" target="_blank" title="讲师招募">讲师招募</a>
+                <a href="/help" target="_blank" title="帮助中心">帮助中心</a>
+                <a href="/user/feedback" target="_blank" title="意见反馈">意见反馈</a>
+                <a href="http://daxue.imooc.com/" target="_blank">阿里巴巴</a>
+                <a href="https://git.imooc.com" target="_blank">代码托管</a>
+                <a href="/about/friendly" target="_blank" title="友情链接">友情链接</a>
+            </div>
+            <div class="footer-copyright">
+                <p><img src="img/a9.png" alt="">&nbsp;2019&nbsp;imooc.com&nbsp;&nbsp;京ICP备 12003892号-11 北京奥鹏文化传媒有限公司</p>
+            </div>
+        </div>
+    </div>
+    <script src="js1/jquery.js"></script>
+    <script>
+        //侧边条切换
+        $(".elevator>a").hover(
+            function() {
+                $(this).children()[0].style.display = "none";
+                $(this).children()[1].style.display = "block";
+            },
+            function() {
+                $(this).children()[0].style.display = "block";
+                $(this).children()[1].style.display = "none";
+            }
+        )
+        $(".no-goto").hover(
+            function() {
+                $(this).children()[2].style.display = "block";
+            },
+            function() {
+                $(this).children()[2].style.display = "none";
+            }
+        )
+    </script>
+</body>
+
+</html>

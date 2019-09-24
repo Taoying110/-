@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="img/icon.jpg" />
+    <title>网游游戏--倒计时自动关闭/跳转页面</title>
+    <style>
+        h4 {
+            margin: 7px auto;
+            display: block;
+            width: 399px;
+            line-height: 3;
+            color: rgb(96, 243, 28);
+        }
+        
+        h4 a {
+            padding-left: 10px;
+            color: rgb(68, 201, 206);
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body style="background: url(register_img/cheng.jpg) no-repeat;background-size: cover">
+    <h4>恭喜注册成功！<span>4秒后将自动跳转到登录页面...</span><a href="login.html">直接跳转</a></h4>
+    <script>
+        var span = document.getElementsByTagName("span")[0];
+
+        function fun() {
+            var n = parseInt(span.innerHTML);
+            n--;
+            if (n > 0) {
+                span.innerHTML = n + "秒后自动跳转到登录页面";
+            } else {
+                location.href = "login.html";
+                clearInterval(timer);
+            }
+        }
+        fun();
+        var timer = setInterval(fun, 1000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0
+}
+
+#msg {
+    width: 800px;
+    height: 500px;
+    position: fixed;
+    right: 30px;
+    display: none;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+    /* background-color: LightBlue; */
+    transition: all .1s linear;
+}
+
+#msg>a {
+    float: right;
+    padding: 5px 10px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+#drag1 {
+    position: fixed;
+    margin-left: 229px;
+    margin-top: 42px;
+}
+
+#drag2 {
+    position: fixed;
+    margin-left: 392px;
+    margin-top: 96px;
+}
+
+#drag3 {
+    position: fixed;
+    margin-left: 13px;
+    margin-top: 117px;
+}
+
+#drag4 {
+    position: fixed;
+    margin-left: 404px;
+    margin-top: 236px;
+}
+
+#drag5 {
+    position: fixed;
+    margin-left: 20px;
+    margin-top: 316px;
+}
+
+#drag6 {
+    position: fixed;
+    margin-left: 383px;
+    margin-top: 360px;
+}
+
+#drag7 {
+    position: fixed;
+    margin-left: 117px;
+    margin-top: 117px;
+}
+
+#slider {
+    width: 660px;
+    height: 150px;
+    position: relative;
+    display: none;
+    /* border: 1px solid #555; */
+}
+
+#slider>a {
+    float: right;
+    padding: 5px 10px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+#slider>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all .5s linear;
+}
+
+#slider>img.show {
+    opacity: 1;
+    z-index: 10;
+}

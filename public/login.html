@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css1/iconfont.css">
+    <link rel="shortcut icon" href="img/icon.jpg" />
+    <title>网游游戏--登录</title>
+    <style>
+        /* 弹出登录注册 */
+        
+        body {
+            background: url(register_img/ackgr.jpg) no-repeat;
+            background-size: cover;
+            opacity: 0.9;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        div#header {
+            margin-top: -18px;
+        }
+        
+        #header .page {
+            width: auto;
+            height: 69px;
+            z-index: 900;
+            box-shadow: 0 4px 8px 0 rgba(7, 17, 27, 0.1);
+            position: relative;
+            margin: 0 auto;
+        }
+        
+        #header .logo {
+            float: left;
+            margin: 0 20px;
+        }
+        
+        #header .logo a {
+            display: block;
+            width: 86px;
+            text-align: center;
+            height: 72px;
+            padding-top: 13px;
+            background: none;
+            color: rgb(170, 170, 170);
+        }
+        
+        #header .logo a img {
+            height: 50px;
+        }
+        
+        #header .navitem li {
+            float: left;
+        }
+        
+        #header .navitem li a {
+            padding: 0 20px;
+            display: block;
+            text-align: center;
+            font-size: 16px;
+            height: 72px;
+            line-height: 72px;
+            position: relative;
+            color: rgb(170, 170, 170);
+        }
+        
+        #header .navitem li:hover a {
+            color: #c7c7c7;
+        }
+        
+        #mask {
+            background-color: #ccc;
+            opacity: 0.5;
+            filter: alpha(opacity=50);
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        #login {
+            position: fixed;
+            z-index: 1001;
+            background: #fff;
+            width: 384px;
+            height: 345px;
+            left: 50%;
+            top: 50%;
+            margin-left: -192px;
+            margin-top: -172px;
+            box-shadow: 0 12px 24px 0 rgba(28, 31, 33, .1);
+            border-radius: 12px;
+        }
+        
+        #signin {
+            position: relative;
+            width: 384px;
+        }
+        
+        .rl-modal-header {
+            position: relative;
+            padding: 0 12px 0px;
+        }
+        
+        .rl-modal-header h1 {
+            font-size: 16px;
+            line-height: 49px;
+            font-weight: 700;
+            height: 49px;
+            color: #787d82;
+        }
+        
+        .rl-modal-header .active-title,
+        .rl-modal-header span:hover {
+            color: #f20d0d;
+        }
+        
+        .rl-modal-header h1 span {
+            float: left;
+            width: 80px;
+            text-align: center;
+            height: 49px;
+            line-height: 49px;
+            cursor: pointer;
+        }
+        
+        .rl-close {
+            position: absolute;
+            top: 17px;
+            right: 20px;
+            width: 17px;
+            height: 17px;
+            cursor: pointer;
+        }
+        
+        .rl-modal-body {
+            padding: 0 32px;
+        }
+        
+        .pr {
+            position: relative;
+        }
+        
+        .rl-modal .ipt {
+            width: 100%;
+            height: 48px;
+            line-height: 20px;
+            box-sizing: border-box;
+            padding: 14px;
+            box-shadow: 2px 0 5px 0 #fff;
+            background: rgba(28, 31, 33, .06);
+            border-radius: 8px;
+            border: 0;
+        }
+        
+        .rlf-tip-wrap {
+            clear: both;
+        }
+        
+        .rlf-tip-wrap {
+            font-size: 9px;
+            height: 5px;
+            color: red;
+            padding-left: 6px;
+            margin-top: 6px;
+        }
+        
+        .rl-modal .form-control {
+            position: relative;
+        }
+        
+        .rlf-appendix {
+            line-height: 1em;
+        }
+        
+        .rlf-appendix .rlf-autoi#ffffffrlf-appendix .rlf-forget {
+            color: #9199a1;
+        }
+        
+        .rlf-appendix .auto-cbx {
+            margin-right: 10px;
+            vertical-align: -1px;
+        }
+        
+        .rlf-appendix.form-control.clearfix a {
+            color: rgb(33, 33, 241);
+            text-decoration: none;
+            font-size: 12px;
+        }
+        
+        .moco-btn-lg {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 11px 32px;
+            font-size: 16px;
+            line-height: 24px;
+            border-radius: 24px;
+            border: 1px solid red;
+            cursor: pointer;
+            color: #fff;
+            text-align: center;
+            background-color: #f20d0d;
+            margin-top: 10px;
+        }
+        
+        .rl-model-footer {
+            padding: 20px 30px 4px;
+        }
+        
+        .pop-login-sns {
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .pop-login-sns .rlf-other {
+            margin-left: 30px;
+            margin-right: 24px;
+            padding-right: 24px;
+            display: inline-block;
+            font-size: 14px;
+            color: #f20d0d;
+            text-align: left;
+            line-height: 24px;
+            border-right: 1px solid #1a1C1F21;
+            cursor: pointer;
+        }
+        
+        .pop-login-sns a {
+            font-size: 14px;
+            margin-right: 21px;
+            height: 20px;
+            line-height: 20px;
+            color: #c8cdd2;
+            transition: color .2s;
+        }
+        
+        .pop-login-sns i {
+            font-size: 24px;
+            vertical-align: -3px;
+            transition: color .2s;
+            color: #b5b9bc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <div class="page clearfix" id="nav">
+            <div id="logo" class="logo">
+                <a href="home.html" target="_self" title="首页">
+                    <img title="游戏" src="img/youxi1.png">
+                </a>
+            </div>
+            <ul class="navitem">
+                <li> <a href="" target="_self">资讯</a></li>
+                <li> <a href="" target="_self">商城</a></li>
+                <li><a href="" target="_self">网游</a></li>
+                <li><a href="" target="_self">游戏库</a></li>
+                <li><a href="" target="_self">攻略</a></li>
+                <li><a href="" target="_self">论坛</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="login">
+        <div id="signin" class="rl-modal in">
+            <div class="rl-modal-header">
+                <h1>
+                    <span class="active-title" id="dl">登录</span>
+                </h1>
+                <i class="iconfont rl-close" id="rl-close">&#xe7fc;</i>
+            </div>
+            <div id="denglu" style="position: absolute">
+                <div class="rl-modal-body js-loginWrap">
+                    <div class="clearfix">
+                        <!-- <form id="signup-form" autocomplete="off" action="./home.html">						 -->
+                        <div class="pr">
+                            <input type="text" maxlength="37" name="uname" id="uname" class="ipt ipt-email" placeholder="请输入用户名">
+                            <p class="rlf-tip-wrap color-red" style="opacity:0">请输入用户名</p>
+                        </div>
+                        <div class="pr">
+                            <input type="password" name="upwd" placeholder="请输入密码" maxlength="16" id="upwd" class="ipt ipt-email">
+                            <p class="rlf-tip-wrap  color-red" style="opacity:0">请输入6-16位密码,区分大小写,不能用空格</p>
+                        </div>
+                        <div class="rlf-appendix form-control  clearfix">
+                            <label for="auto-signin" class="rlf-autoin l" hidefocus="true">
+                                    <input type="checkbox" checked="checked" class="auto-cbx" id="auto-signin">7天内自动登录
+                                </label>
+                            <a href="javascript:undefined" class="rlf-forget r" target="_blank" hidefocus="true">找回密码</a>
+                            <a href="./register.html" class="rlf-forget r" target="_blank" hidefocus="true">暂未注册</a>
+                        </div>
+                        <div class="clearfix">
+                            <input type="submit" value="登录" class="moco-btn moco-btn-lg" id="chenggong">
+                        </div>
+                        <!-- </form>		  	 -->
+                    </div>
+                </div>
+                <div class="rl-model-footer">
+                    <div class="pop-login-sns clearfix">
+                        <span class="l rlf-other xa-showPhoneSignin">其他登录方式</span>
+                        <a href="javascript:void(0);" hidefocus="true" class="pop-sns-weibo l"><i class="iconfont">&#xe883;</i></a>
+                        <a href="javascript:void(0);" hidefocus="true" class="pop-sns-weixin l"><i class="iconfont">&#xe884;</i></a>
+                        <a href="javascript:void(0);" hidefocus="true" class="pop-sns-qq l"><i class="iconfont">&#xe882;</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js1/jquery.js"></script>
+    <script src="js1/login.js"></script>
+    <script>
+        $("#phone").focus(function() {
+            $(this).next().css("opacity", 1);
+        }).blur(function() {
+            $(this).next().css("opacity", 0);
+        })
+        $("#pwd").focus(function() {
+            $(this).next().css("opacity", 1);
+        }).blur(function() {
+            $(this).next().css("opacity", 0);
+        })
+        $("#rl-close").click(function() {
+            location.href = "home.html";
+        })
+    </script>
+    <script>
+    </script>
+</body>
+
+</html>

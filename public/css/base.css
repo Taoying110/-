@@ -1,0 +1,36 @@
+/* @import "../animate.css";
+@import "../iconfont.css"; */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%
+}
+
+html {
+    min-width: 1088px;
+}
+
+body {
+    font: 14px "Helvetica Neue", Helvetica, "Microsoft YaHei", Arial, "sans-serif";
+    color: #333;
+    background-color: #f3f4f6;
+}
+
+a:hover,
+a:focus {
+    color: #509524;
+    text-decoration: none;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a,
+a:hover {
+    /* 过渡 */
+    transition: all .3s ease-out 0s;
+}

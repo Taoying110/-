@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css1/iconfont.css">
+    <link rel="shortcut icon" href="img/icon.jpg" />
+    <title>网游游戏--注册</title>
+    <style>
+        body {
+            background: url(register_img/ackgr.jpg) no-repeat;
+            background-size: cover;
+            opacity: 0.9;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        div#header {
+            margin-top: -18px;
+        }
+        
+        #header .page {
+            width: auto;
+            height: 69px;
+            z-index: 900;
+            box-shadow: 0 4px 8px 0 rgba(7, 17, 27, 0.1);
+            position: relative;
+            margin: 0 auto;
+        }
+        
+        #header .logo {
+            float: left;
+            margin: 0 20px;
+        }
+        
+        #header .logo a {
+            display: block;
+            width: 86px;
+            text-align: center;
+            height: 72px;
+            padding-top: 13px;
+            background: none;
+            color: rgb(170, 170, 170);
+        }
+        
+        #header .logo a img {
+            height: 50px;
+        }
+        
+        #header .navitem li {
+            float: left;
+        }
+        
+        #header .navitem li a {
+            padding: 0 20px;
+            display: block;
+            text-align: center;
+            font-size: 16px;
+            height: 72px;
+            line-height: 72px;
+            position: relative;
+            color: rgb(170, 170, 170);
+        }
+        
+        #header .navitem li:hover a {
+            color: #c7c7c7;
+        }
+        
+        .reg-form-wrap {
+            padding: 18px 10px 29px 21px;
+            background: #f8fdff;
+            border-radius: 9px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            width: 600px;
+            height: 445px;
+            margin: 60px auto;
+            position: relative;
+        }
+        
+        div#guanbi {
+            position: absolute;
+            right: 26px;
+            top: 15px;
+            color: rgb(243, 42, 42);
+            cursor: pointer;
+        }
+        
+        form.js-reg-form {
+            height: 356px;
+        }
+        
+        .m-item label {
+            float: left;
+            width: 92px;
+            height: 45px;
+            line-height: 45px;
+            text-align: right;
+            color: #505050;
+            font-size: 16px;
+        }
+        
+        .m-item .col-wrap {
+            float: left;
+            position: relative;
+            padding-left: 10px;
+            padding-top: 1px;
+            padding-bottom: 10px;
+        }
+        
+        .m-item .input-wp {
+            float: left;
+        }
+        
+        .m-item .u-ipt {
+            padding: 9px 15px 9px 50px;
+        }
+        
+        .m-item .u-user,
+        .m-item .u-lock,
+        .m-item .u-unlock,
+        .m-item .u-setting {
+            position: absolute;
+            display: block;
+            width: 21px;
+            height: 20px;
+            top: 13px;
+            left: 24px;
+            background-image: url(register_img/icons.png);
+        }
+        
+        .u-ipt,
+        .u-ipt2 {
+            border: none;
+            display: block;
+            width: 238px;
+            height: 24px;
+            font-size: 14px;
+            color: #505050;
+            line-height: 24px;
+            overflow: hidden;
+            background-color: #fcfcfc;
+            box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25) inset;
+            border-radius: 4px;
+            outline: 0;
+        }
+        
+        .m-item .items-status {
+            display: block;
+            position: absolute;
+            left: 296px;
+            top: 11px;
+            width: 25px;
+            height: 23px;
+            background: url(register_img/icons.png) no-repeat 999px 0;
+        }
+        
+        .m-item .alert {
+            padding-left: 11px;
+            width: 183px;
+        }
+        
+        .alert {
+            float: left;
+            height: 46px;
+            width: 183px;
+            line-height: 46px;
+            font-size: 12px;
+            color: #888;
+            opacity: 0;
+        }
+        
+        .js-item-authcode .yanzhengma {
+            opacity: 1;
+        }
+        
+        .m-item .u-lock {
+            left: 26px;
+            background-position: 0 -30px;
+        }
+        
+        .m-item .u-unlock {
+            left: 26px;
+            background-position: 0 -88px;
+        }
+        
+        .m-item .u-setting {
+            left: 25px;
+            background-position: 0 -166px;
+        }
+        
+        .item-authcode {
+            margin-top: 13px;
+        }
+        
+        .m-item .input-wp {
+            float: left;
+        }
+        
+        .m-item .input-wp:focus,
+        .m-item .u-ipt1 {
+            width: 108px;
+        }
+        
+        .m-item .authcode {
+            cursor: pointer;
+            float: left;
+            width: 100px;
+            height: 45px;
+            margin-left: 18px;
+        }
+        
+        .m-item .authcode img {
+            width: 100px;
+            height: 42px;
+        }
+        
+        .alert-row2 {
+            line-height: 18px;
+            margin-top: 2px;
+        }
+        
+        .c-r {
+            color: gray;
+            margin-top: -2px;
+        }
+        
+        .d-b {
+            display: block;
+        }
+        
+        a {
+            color: #52b4fc;
+        }
+        
+        .m-item .tip {
+            clear: both;
+            padding-top: 23px;
+            height: 20px;
+            line-height: 20px;
+            vertical-align: middle;
+        }
+        
+        #code {
+            font-family: Arial;
+            font-style: italic;
+            font-weight: 100;
+            font-size: 23px;
+            border: 0;
+            letter-spacing: 6px;
+            color: blue;
+            width: 100px;
+            height: 41px;
+        }
+        
+        .item-sub {
+            margin-top: 18px;
+        }
+        
+        .m-item .col-offset3 {
+            width: 449px;
+        }
+        
+        .m-item .extra {
+            float: right;
+            font-size: 12px;
+            height: 50px;
+            width: 80px;
+            line-height: 17px;
+        }
+        
+        .u-btn-submit {
+            width: 252px;
+            float: left;
+            box-sizing: border-box;
+            padding: 11px 32px;
+            font-size: 16px;
+            line-height: 24px;
+            border-radius: 24px;
+            border: 1px solid red;
+            cursor: pointer;
+            color: #fff;
+            text-align: center;
+            background-color: #f20d0d;
+            margin-left: 91px;
+        }
+        
+        .rl-model-footer {
+            padding: 20px 30px 4px;
+        }
+        
+        .pop-login-sns {
+            text-align: right;
+            font-size: 14px;
+        }
+        
+        .pop-login-sns .rlf-other {
+            margin-left: 30px;
+            margin-right: 24px;
+            padding-right: 24px;
+            display: inline-block;
+            font-size: 14px;
+            color: #f20d0d;
+            text-align: left;
+            line-height: 24px;
+            border-right: 1px solid #1a1C1F21;
+            cursor: pointer;
+        }
+        
+        .pop-login-sns a {
+            font-size: 14px;
+            margin-right: 21px;
+            height: 20px;
+            line-height: 20px;
+            color: #c8cdd2;
+            text-decoration: none;
+        }
+        
+        .pop-login-sns i {
+            font-size: 24px;
+            vertical-align: -3px;
+            color: #b5b9bc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <div class="page clearfix" id="nav">
+            <div id="logo" class="logo">
+                <a href="home.html" target="_self" title="首页">
+                    <img title="游戏" src="img/youxi1.png">
+                </a>
+            </div>
+            <ul class="navitem">
+                <li> <a href="" target="_self">资讯</a></li>
+                <li> <a href="" target="_self">商城</a></li>
+                <li><a href="" target="_self">网游</a></li>
+                <li><a href="" target="_self">游戏库</a></li>
+                <li><a href="" target="_self">攻略</a></li>
+                <li><a href="" target="_self">论坛</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="login-container">
+        <div class="reg-form-wrap">
+            <div class="register">注册</div>
+            <div id="guanbi">X</div>
+            <!-- <form action="forward.html" method="post" class="js-reg-form" autocomplete="off"> -->
+            <div class="m-item js-item-user z-input-success">
+                <label for="inputName">用户名</label>
+                <div class="col-wrap js-ipt">
+                    <i class="u-user ie6png"></i>
+                    <div class="input-wp">
+                        <input type="text" name="uname" id="inputName" class="u-ipt" maxlength="38" autocomplete="off" placeholder="请输入用户名">
+                    </div>
+                    <div class="items-status js-status"></div>
+                    <div class="alert tishi">
+                        <p class="alert-row2"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="m-item item-pwd js-item-pwd z-input-error">
+                <label for="inputPwd">密码</label>
+                <div class="col-wrap js-ipt z-sel">
+                    <i class="u-lock ie6png"></i>
+                    <div class="input-wp">
+                        <input type="password" name="upwd" id="inputPwd" class="u-ipt" maxlength="16" placeholder="请输入密码" autocomplete="off">
+                    </div>
+                    <div class="items-status upwd_status"></div>
+                    <div class="alert tishi">
+                        <p class="c-r"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="m-item item-repwd js-item-repwd z-input-error">
+                <label for="inputRePwd">确认密码</label>
+                <div class="col-wrap js-ipt">
+                    <i class="u-unlock ie6png"></i>
+                    <div class="input-wp">
+                        <input type="password" id="inputRePwd" class="u-ipt" maxlength="16" autocomplete="off">
+                    </div>
+                    <div class="items-status upwd_agin"></div>
+                    <div class="alert tishi">
+                        <p class="c-r">请再次输入密码</p>
+                    </div>
+                </div>
+            </div>
+            <div class="m-item item-authcode js-item-authcode">
+                <label for="inputAuthCode">验证码</label>
+                <div class="col-wrap js-ipt">
+                    <i class="u-setting ie6png"></i>
+                    <div class="input-wp">
+                        <input type="text" id="inputAuthCode_input1" class="u-ipt u-ipt1" maxlength="4" autocomplete="off">
+                    </div>
+                    <div class="authcode">
+                        <input type="button" id="code" onclick="createCode()" />
+                    </div>
+                    <div class="alert yanzhengma">
+                        <p class="alert-row2">
+                            <span class="js-authInfo">输入图片中显示的字符</span>
+                            <a href="" class="js-re-authcode d-b" id="change"><i class="u-left1"></i>点击换一张</a>
+                        </p>
+                    </div>
+                    <p class="tip">
+                        <input type="checkbox" checked>
+                        <span class="js-switch-deal cursor-p">我已阅读并同意相关服务条款</span>
+                        <span>|</span>
+                        <a href="http://web.7k7k.com/html/user/20101217-3677.html" class="c-b" target="_blank">《慕课网注册协议》</a>
+                    </p>
+                </div>
+            </div>
+            <div class="m-item item-sub">
+                <div class="col-wrap col-offset3 js-sub">
+                    <input class="u-btn u-btn-submit" value="立即注册" type="submit" id="tijiao">
+                    <p class="extra">已经注册？ <a href="./login.html" class="d-b">直接登录</a></p>
+                </div>
+            </div>
+            <!-- </form> -->
+            <div class="rl-model-footer">
+                <div class="pop-login-sns clearfix">
+                    <span class="l rlf-other xa-showPhoneSignin" style="color:rgb(177, 177, 177)">其他方式登录</span>
+                    <a href="javascript:void(0)" hidefocus="true" class="pop-sns-weibo l"><i class="iconfont">&#xe883;</i></a>
+                    <a href="javascript:void(0)" hidefocus="true" class="pop-sns-weixin l"><i class="iconfont">&#xe884;</i></a>
+                    <a href="javascript:void(0)" hidefocus="true" class="pop-sns-qq l"><i class="iconfont">&#xe882;</i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js1/jquery.js"></script>
+    <script src="js1/register.js"></script>
+    <script>
+        var code;
+
+        function createCode() {
+            //首先默认code为空字符串
+            code = '';
+            //设置长度4
+            var codeLength = 4;
+            var codeV = document.getElementById('code');
+            //设置随机字符
+            var random = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
+            //循环codeLength 我设置的4就是循环4次
+            for (var i = 0; i < codeLength; i++) {
+                //设置随机数范围,这设置为0 ~ 36
+                var index = Math.floor(Math.random() * random.length);
+                //字符串拼接 将每次随机的字符 进行拼接
+                code += random[index];
+            }
+            //将拼接好的字符串赋值给展示的Value
+            codeV.value = code;
+        }
+        var change = document.getElementById('change');
+        change.onclick = function() {
+                createCode();
+            }
+            //下面就是判断是否== 的代码，无需解释
+
+        //设置此处的原因是每次进入界面展示一个随机的验证码，不设置则为空
+        window.onload = function() {
+            createCode();
+        }
+    </script>
+    <script>
+        //表单提示
+        $("#inputName").focus(function() {
+            var uname = $(this).parent().siblings(":eq(2)")
+            uname.css("opacity", 1)
+            uname.children(":eq(0)").html("在3~8位的任意字符~").css("color", "gray");
+            $(".items-status.js-status").css("background-position", "999px 0");
+        }).blur(function() {
+            var uname = $(this).parent().siblings(":eq(2)")
+            var reg = /^[\u4e00-\u9fa5_a-zA-Z0-9]{2,7}$/;
+            if (reg.test(this.value)) {
+                uname.css("opacity", 0);
+                $(".items-status.js-status").css("background-position", "0 -226px")
+            } else {
+                uname.css("opacity", 1);
+                $(".items-status.js-status").css("background-position", "6px -282px")
+                uname.children(":eq(0)").html("请输入用户名").css("color", "red")
+            }
+        })
+        $("#inputPwd").focus(function() {
+            var uname = $(this).parent().siblings(":eq(2)")
+            uname.css("opacity", 1)
+            uname.children(":eq(0)").html("6~16个字符，数字或英文的组合").css("color", "gray")
+            $(".upwd_status").css("background-position", "999px 0");
+        }).blur(function() {
+            var uname = $(this).parent().siblings(":eq(2)")
+            var reg = /^[a-zA-Z0-9]{6,16}$/;
+            if (reg.test(this.value)) {
+                uname.css("opacity", 0);
+                $(".upwd_status").css("background-position", "0 -226px")
+            } else {
+                uname.css("opacity", 1);
+                $(".upwd_status").css("background-position", "6px -282px")
+                uname.children(":eq(0)").html("请输入密码").css("color", "red")
+            }
+        })
+        $("#inputRePwd").focus(function() {
+            var uname = $(this).parent().siblings(":eq(2)")
+            uname.css("opacity", 1)
+            uname.children(":eq(0)").html("请再次输入密码").css("color", "red")
+            $(".upwd_agin").css("background-position", "999px 0");
+        }).blur(function() {
+            var uname = $(this).parent().siblings(":eq(2)")
+            uname.css("opacity", 0)
+            var value = $("#inputPwd").val();
+            if ($("#inputRePwd").val() !== "" && $("#inputRePwd").val() == value) {
+                $(".upwd_agin").css("background-position", "0 -226px")
+            } else {
+                $(".upwd_agin").css("background-position", "6px -282px")
+            }
+        })
+        $("#inputAuthCode_input1").focus(function() {
+            $(".js-authInfo").html("输入图片中显示的字符").css("color", "gray")
+        }).blur(function() {
+            if ($("#inputAuthCode_input1").val() == "") {
+                $(".js-authInfo").html("请输入验证码").css("color", "red")
+            }
+        })
+        $("#tijiao").click(function() {
+            var oValue = document.getElementById('inputAuthCode_input1').value.toUpperCase();
+            if (oValue == 0) {
+                alert('请输入验证码');
+            } else if (oValue != code) {
+                alert('验证码不正确，请重新输入');
+                oValue = ' ';
+                createCode();
+            }
+        })
+        $("#guanbi").click(function() {
+            location.href = "home.html"
+        })
+    </script>
+</body>
+
+</html>

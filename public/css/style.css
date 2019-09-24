@@ -1,0 +1,71 @@
+/* * { margin: 0; padding: 0; } */
+
+.wrap {
+    height: 765px;
+    background: url(../image/guide_03.jpg) 50% no-repeat;
+}
+
+.p-box {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 200px;
+}
+
+.tab1 {
+    position: absolute;
+    left: 0;
+    top: 210px;
+    width: 255px;
+    height: 475px;
+    list-style-type: none;
+}
+
+.tab1 li {
+    height: 95px;
+    background-image: url(../image/tabnor.png);
+}
+
+.tab1 .on {
+    background-image: url(../image/tabact.png);
+}
+
+.tab1 .f01 {
+    background-position: 0 0;
+}
+
+.tab1 .f02 {
+    background-position: 0 -95px;
+}
+
+.tab1 .f03 {
+    background-position: 0 -190px;
+}
+
+.tab1 .f04 {
+    background-position: 0 -285px;
+}
+
+.tab1 .f05 {
+    background-position: 0 bottom;
+}
+
+.swiper-container {
+    position: absolute;
+    right: 105px;
+    top: 246px;
+    z-index: 2;
+    width: 800px;
+    height: 400px;
+}
+
+.swiper-slide img {
+    width: 100%;
+}
+
+.char {
+    position: absolute;
+    right: -80px;
+    top: 170px;
+    z-index: 3;
+}

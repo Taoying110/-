@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="image/icon.ico" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/drag.css">
+    <title>烦恼垃圾桶</title>
+</head>
+
+<body>
+    <div>
+        <h1>拖出烦恼——瞬间拥有好心情</h1>
+    </div>
+    <div>
+        <div id="msg" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <a>X</a>
+        </div>
+        <br />
+        <img id="drag1" src="image/drag1.jpg" draggable="true" ondragstart="drag1(event)" />
+        <img id="drag2" src="image/drag2.jpg" draggable="true" ondragstart="drag2(event)" />
+        <img id="drag3" src="image/drag3.jpg" draggable="true" ondragstart="drag3(event)" />
+        <img id="drag4" src="image/drag4.jpg" draggable="true" ondragstart="drag4(event)" />
+        <img id="drag5" src="image/drag5.jpg" draggable="true" ondragstart="drag5(event)" />
+        <img id="drag6" src="image/drag6.jpg" draggable="true" ondragstart="drag6(event)" />
+        <img id="drag7" src="image/drag7.jpg" draggable="true" ondragstart="drag7(event)" />
+    </div>
+    <input type="button" value="后退一页" onclick="goBack()">
+    <div id="slider">
+        <a>X</a>
+        <img src="image/happy1.jpg" class="show" alt="要欢乐" />
+        <img src="image/happy2.jpg" alt="要开心" />
+        <img src="image/happy3.jpg" alt="要快乐" />
+        <img src="image/happy4.jpg" alt="要幸福" />
+    </div>
+
+</body>
+<script type="text/javascript">
+    function allowDrop(e) {
+        e.preventDefault();
+    }
+
+    function drag1(e) {
+        e.dataTransfer.setData("Text", e.target.id);
+    }
+
+    function drag2(e) {
+        e.dataTransfer.setData("Text", e.target.id);
+    }
+
+    function drag3(e) {
+        e.dataTransfer.setData("Text", e.target.id);
+    }
+
+    function drag4(e) {
+        e.dataTransfer.setData("Text", e.target.id);
+    }
+
+    function drag5(e) {
+        e.dataTransfer.setData("Text", e.target.id);
+    }
+
+    function drag6(e) {
+        e.dataTransfer.setData("Text", e.target.id);
+    }
+
+    function drag7(e) {
+        e.dataTransfer.setData("Text", e.target.id);
+    }
+
+    function drop(e) {
+        e.preventDefault();
+        var data1 = e.dataTransfer.getData("Text");
+        var data2 = e.dataTransfer.getData("Text");
+        var data3 = e.dataTransfer.getData("Text");
+        var data4 = e.dataTransfer.getData("Text");
+        var data5 = e.dataTransfer.getData("Text");
+        var data6 = e.dataTransfer.getData("Text");
+        var data7 = e.dataTransfer.getData("Text");
+        e.target.appendChild(document.getElementById(data1));
+        e.target.appendChild(document.getElementById(data2));
+        e.target.appendChild(document.getElementById(data3));
+        e.target.appendChild(document.getElementById(data4));
+        e.target.appendChild(document.getElementById(data5));
+        e.target.appendChild(document.getElementById(data6));
+        e.target.appendChild(document.getElementById(data7));
+    }
+</script>
+<script>
+    //首先要在css中为msg添加transition属性
+    window.onload = function() {
+        msg.style.display = "block";
+    }
+    msg.children[0].onclick = function() {
+        this.parentNode.style.display = "none";
+        setTimeout(() => {
+            this.parentNode.style.display = "none";
+            slider.style.display = "block";
+        }, 1000)
+    }
+    slider.children[0].onclick = function() {
+        this.parentNode.style.display = "none";
+        setTimeout(() => {
+            this.parentNode.style.display = "none";
+        }, 1000)
+    }
+</script>
+<script>
+    var imgs = document.querySelectorAll("img");
+    for (var img of imgs) {
+        img.onclick = function() {
+            alert(this.alt);
+        }
+    }
+
+    function task() {
+        var imgshow = document.querySelector(".show");
+        imgshow.className = "";
+        if (imgshow.nextElementSibling !== null) {
+            imgshow.nextElementSibling.className = "show";
+
+        } else {
+            imgshow.parentNode.children[0].className = "show";
+        }
+    }
+    task();
+    setInterval(task, 1000);
+    var timer = setInterval(task, 1000);
+    slider.onmouseover = function() {
+        clearInterval(timer);
+        timer = null;
+    }
+    slider.onmouseout = function() {
+        timer = setInterval(task, 1000);
+    }
+</script>
+<script>
+    function goBack() {
+        window.history.go(-1)
+    }
+</script>
+
+</html>
